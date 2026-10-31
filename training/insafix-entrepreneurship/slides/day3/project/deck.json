@@ -1,0 +1,40 @@
+{
+  "v": 4,
+  "createdOnFiles": { "v": 1, "at": "2026-10-31T09:00:00Z" },
+  "lists": "css",
+  "title": "তৃতীয় দিন — Digital Marketing ও বিনা অগ্রিম বিনিয়োগে Reselling",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "recap",
+    "marketing",
+    "reselling",
+    "flow",
+    "alinsaf-process",
+    "customers",
+    "list",
+    "start",
+    "message",
+    "assignment",
+    "closing"
+  ],
+  "sections": {
+    "s1": { "description": "গতকালের Content থেকে আজকের Marketing ও Reselling", "start": "cover" },
+    "s2": {
+      "description": "সম্ভাব্য ক্রেতা চেনা, তালিকা করা ও যোগাযোগ শুরু",
+      "start": "customers"
+    },
+    "s3": { "description": "আজকের কাজ ও সামনের পথ", "start": "assignment" }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
