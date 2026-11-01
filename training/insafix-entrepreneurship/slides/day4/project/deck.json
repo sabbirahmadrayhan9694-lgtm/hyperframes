@@ -1,12 +1,14 @@
 {
   "v": 4,
-  "createdOnFiles": { "v": 1, "at": "2026-11-01T08:10:00Z" },
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-01T08:10:00Z"
+  },
   "lists": "css",
   "title": "চতুর্থ দিন — এলার্জি সমস্যা ও Allergy Clean",
   "cover": "cover",
   "order": [
     "cover",
-    "recap",
     "what",
     "causes",
     "symptoms",
@@ -14,16 +16,26 @@
     "product",
     "works",
     "making",
-    "faq",
-    "post",
     "opportunity",
+    "income",
+    "thinking",
     "task",
-    "closing"
+    "next",
+    "thanks"
   ],
   "sections": {
-    "s1": { "description": "এলার্জি সমস্যা: সংজ্ঞা, কারণ ও লক্ষণ", "start": "cover" },
-    "s2": { "description": "Allergy Clean পরিচিতি ও ক্রেতার প্রশ্ন", "start": "need" },
-    "s3": { "description": "মার্কেটিং, আয়ের পথ ও আজকের কাজ", "start": "post" }
+    "s1": {
+      "description": "এলার্জি সমস্যা: সংজ্ঞা, কারণ ও লক্ষণ",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "Allergy Clean পরিচিতি ও তৈরির ধারণা",
+      "start": "need"
+    },
+    "s3": {
+      "description": "ব্যবসার সুযোগ, আজকের কাজ ও পরের ক্লাস",
+      "start": "opportunity"
+    }
   },
   "faces": {
     "baloo-da-2": {
