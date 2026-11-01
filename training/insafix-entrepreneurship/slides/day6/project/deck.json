@@ -1,0 +1,51 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-01T17:10:00Z"
+  },
+  "lists": "css",
+  "title": "ষষ্ঠ দিন — বৈবাহিক জীবন, শারীরিক সক্ষমতা ও আত্মবিশ্বাস",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "foundation",
+    "causes",
+    "confidence",
+    "lifestyle",
+    "lionman",
+    "sultani",
+    "want",
+    "making",
+    "opportunity",
+    "vision",
+    "task",
+    "next",
+    "thanks"
+  ],
+  "sections": {
+    "s1": {
+      "description": "সুখী জীবনের ভিত্তি, দুর্বলতার কারণ ও আত্মবিশ্বাস",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "Lion Man ও Sultani Halua পরিচিতি",
+      "start": "lionman"
+    },
+    "s3": {
+      "description": "ব্যবসার সুযোগ, আজকের কাজ ও পরের ক্লাস",
+      "start": "opportunity"
+    }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
