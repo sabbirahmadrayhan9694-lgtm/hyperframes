@@ -1,0 +1,50 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-01T09:20:00Z"
+  },
+  "lists": "css",
+  "title": "পঞ্চম দিন — হেংলা-পাতলা শরীর ও Smart Body Halua",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "goal",
+    "causes",
+    "effects",
+    "question",
+    "product",
+    "want",
+    "making",
+    "market",
+    "opportunity",
+    "vision",
+    "task",
+    "next"
+  ],
+  "sections": {
+    "s1": {
+      "description": "ওজন কম হওয়ার কারণ ও প্রভাব",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "Smart Body Halua পরিচিতি ও তৈরির ধারণা",
+      "start": "question"
+    },
+    "s3": {
+      "description": "বাজার, ব্যবসার সুযোগ ও আজকের কাজ",
+      "start": "market"
+    }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
