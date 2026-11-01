@@ -1,0 +1,39 @@
+{
+  "v": 4,
+  "createdOnFiles": { "v": 1, "at": "2026-11-01T08:10:00Z" },
+  "lists": "css",
+  "title": "চতুর্থ দিন — এলার্জি সমস্যা ও Allergy Clean",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "recap",
+    "what",
+    "causes",
+    "symptoms",
+    "need",
+    "product",
+    "works",
+    "making",
+    "faq",
+    "post",
+    "opportunity",
+    "task",
+    "closing"
+  ],
+  "sections": {
+    "s1": { "description": "এলার্জি সমস্যা: সংজ্ঞা, কারণ ও লক্ষণ", "start": "cover" },
+    "s2": { "description": "Allergy Clean পরিচিতি ও ক্রেতার প্রশ্ন", "start": "need" },
+    "s3": { "description": "মার্কেটিং, আয়ের পথ ও আজকের কাজ", "start": "post" }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
