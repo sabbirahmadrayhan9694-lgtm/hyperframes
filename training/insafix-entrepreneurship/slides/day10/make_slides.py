@@ -14,7 +14,11 @@ exec(_day9.split("\nslides = {}")[0])
 ROOT = HERE / "project"
 SL = ROOT / "slides"
 SL.mkdir(parents=True, exist_ok=True)
-TOTAL = 13
+TOTAL = 14
+P_DIAGRAM = "/_blob/0d69c7a65f41e669315db9fd587ad04f"
+P_NOSTRIL = "/_blob/479faad0de56505ad525bd4918260935"
+P_SINUS = "/_blob/3ba6b45dd478a13a333c0ccaa8a79177"
+P_AIRWAY = "/_blob/9b704aa65a67ca0f95b27cbcdbc33007"
 LOGO_A = "/_blob/aff41232c31b700685657584720cf839"
 LOGO_I = "/_blob/5c6c34f65f1398a4704cc449300b956f"
 COMBO = "/_blob/6c8bc511084357adac7a3b94a6203742"
@@ -54,12 +58,21 @@ b = cover.index("</aside>")
 cover = cover[:a] + "<aside>দশম দিন: নেসাল পলিপাস। আজ পলিপাস কী, এর ধরন, লক্ষণ, রোগীর হিস্ট্রি, চিকিৎসা পদ্ধতির তুলনা, খাদ্যাভ্যাস ও সতর্কতা নিয়ে আলোচনা হবে। ক্রিম প্রয়োগের পুরো পদ্ধতি শেখানো হবে অফলাইন প্র্যাকটিক্যাল ট্রেনিং-এ।" + cover[b:]
 slides["cover"] = cover
 
+def_rows = "".join(
+    '<div style="background:#FFFFFF;border:1px solid #DCE6D6;border-radius:20px;padding:20px 26px;display:flex;flex-direction:row;gap:20px;align-items:center">'
+    f'<div style="background:#2E9E5B;border-radius:999px;padding:16px;display:flex"><x-icon name="{ic}" style="color:#FFFFFF;width:36px;height:36px"></x-icon></div>'
+    f'<div style="display:flex;flex-direction:column;gap:4px"><h3 style="font-size:32px;font-weight:700;color:#12352A">{t}</h3><p style="font-size:26px;line-height:1.4;color:#4A6358">{d}</p></div></div>\n'
+    for ic, t, d in [("Settings", "পরিষ্কারক", "বাতাসের ধূলিকণা ও জীবাণু নাকের লোম ও মিউকাসে ফিল্টার হয়"),
+                     ("Activity", "তাপমাত্রা নিয়ন্ত্রক", "বাইরের শীতল বা উষ্ণ বাতাসকে ফুসফুসের জন্য উষ্ণ ও আর্দ্র করে"),
+                     ("Trust", "রক্ষাকবচ", "ঘ্রাণের মাধ্যমে ক্ষতিকর পরিবেশ বা খাবার সম্পর্কে মস্তিষ্ককে সতর্ক করে")]
+)
 slides["defense"] = light("defense", "#EEF5EA",
     header("ANATOMY · শ্বাসতন্ত্রের প্রবেশদ্বার" + NOTE, "নাকের", "প্রতিরক্ষা ব্যবস্থা")
-    + cards([("Settings", "পরিষ্কারক", "বাতাসের ধূলিকণা ও জীবাণু নাকের লোম ও মিউকাসে ফিল্টার হয়"),
-             ("Activity", "তাপমাত্রা নিয়ন্ত্রক", "বাইরের শীতল বা উষ্ণ বাতাসকে ফুসফুসের জন্য উষ্ণ ও আর্দ্র করে"),
-             ("Trust", "রক্ষাকবচ", "ঘ্রাণের মাধ্যমে ক্ষতিকর পরিবেশ বা খাবার সম্পর্কে মস্তিষ্ককে সতর্ক করে")])
-    + note_pill("নাক বন্ধ থাকলে মুখ দিয়ে শ্বাস নিতে হয়, যা ফুসফুসকে সরাসরি জীবাণু ও শুষ্ক বাতাসের সম্মুখীন করে"),
+    + '<div style="display:flex;flex-direction:row;gap:40px;align-items:center">\n'
+      f'<img src="{P_AIRWAY}" alt="শ্বাসতন্ত্রের ছবি: নাক থেকে ফুসফুস পর্যন্ত" style="width:470px;height:466px;object-fit:contain;border-radius:24px">\n'
+      '<div style="flex:1;display:flex;flex-direction:column;gap:16px">\n' + def_rows
+    + '<p style="font-size:27px;line-height:1.45;color:#5A3510;background:#FFF1E0;border:2px solid #F6D2A8;border-radius:20px;padding:18px 26px">নাক বন্ধ থাকলে মুখ দিয়ে শ্বাস নিতে হয়, যা ফুসফুসকে সরাসরি জীবাণু ও শুষ্ক বাতাসের সম্মুখীন করে</p>\n'
+      "</div>\n</div>\n",
     2, "নাক শ্বাসতন্ত্রের প্রবেশদ্বার: পরিষ্কারক, তাপমাত্রা নিয়ন্ত্রক আর রক্ষাকবচ। নাক বন্ধ থাকলে মুখ দিয়ে শ্বাস নিতে হয়, যা ফুসফুসকে সরাসরি জীবাণু ও শুষ্ক বাতাসের সম্মুখীন করে।")
 
 sinus = "".join(
@@ -71,13 +84,19 @@ sinus = "".join(
 slides["what"] = light("what", "#F6F7F0",
     header("WHAT IS POLYPUS · পলিপাস কী" + NOTE, "পলিপাস", "কী?")
     + '<div style="display:flex;flex-direction:row;gap:48px;align-items:center">\n'
-      '<div style="flex:1.2;background:#1F7A42;border-radius:28px;padding:44px 48px;display:flex;flex-direction:column;gap:20px">'
+      '<div style="flex:1;background:#1F7A42;border-radius:28px;padding:44px 48px;display:flex;flex-direction:column;gap:20px">'
       f'<p style="{HEAD};font-size:44px;font-weight:700;line-height:1.4;color:#FFFFFF">নাক এবং প্যারানাজাল সাইনাসের মধ্যকার মিউকাস টিস্যুর অতিরিক্ত মাংস বৃদ্ধিই হলো পলিপাস,</p>'
       '<p style="font-size:32px;line-height:1.45;color:#D7F0C2">যা সাইনাসের স্বাভাবিক রস নিঃসরণে বাধা সৃষ্টি করে।</p></div>\n'
-      '<div style="flex:1;display:flex;flex-direction:column;gap:14px">'
-      '<p style="font-size:26px;font-weight:700;letter-spacing:1px;color:#B85A0C">প্যারানাজাল সাইনাস ৪টি</p>\n'
-      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">\n' + sinus + "</div></div>\n</div>\n<div></div>\n",
-    3, "নাক এবং প্যারানাজাল সাইনাসের মধ্যকার মিউকাস টিস্যুর অতিরিক্ত মাংস বৃদ্ধিই হলো পলিপাস, যা সাইনাসের স্বাভাবিক রস নিঃসরণে বাধা সৃষ্টি করে। প্যারানাজাল সাইনাস চারটি: ফ্রন্টাল, ইথময়ডাল, ম্যাক্সিলারী আর স্ফেনয়ডাল।")
+      f'<img src="{P_DIAGRAM}" alt="নাকের ভেতরে পলিপাস: স্পেকুলাম দিয়ে দেখা ছবি ও নকশা" style="width:600px;height:608px;object-fit:contain;border-radius:24px;border:6px solid #FFFFFF;box-shadow:0 20px 50px rgba(18,53,42,0.18)">\n'
+      "</div>\n",
+    3, "নাক এবং প্যারানাজাল সাইনাসের মধ্যকার মিউকাস টিস্যুর অতিরিক্ত মাংস বৃদ্ধিই হলো পলিপাস, যা সাইনাসের স্বাভাবিক রস নিঃসরণে বাধা সৃষ্টি করে। ছবিতে স্পেকুলাম দিয়ে নাকের ভেতরে পলিপাস দেখানো হয়েছে, নিচে তার নকশা।")
+
+slides["sinus"] = light("sinus", "#EEF5EA",
+    header("SINUS · প্যারানাজাল সাইনাস" + NOTE, "প্যারানাজাল সাইনাস", "ও পলিপাসের অবস্থান")
+    + '<div style="display:flex;flex-direction:row;gap:40px;align-items:center">\n'
+      f'<img src="{P_SINUS}" alt="মুখের ভেতরে চারটি সাইনাস ও পলিপাস" style="width:1080px;height:535px;object-fit:contain;border-radius:24px">\n'
+      '<div style="flex:1;display:flex;flex-direction:column;gap:14px">\n' + sinus + "</div>\n</div>\n",
+    4, "প্যারানাজাল সাইনাস চারটি: ফ্রন্টাল, ইথময়ডাল, ম্যাক্সিলারী আর স্ফেনয়ডাল। ছবিতে নাকের ভেতরের হলুদ অংশগুলো পলিপাস, যা সাইনাসের রস বের হওয়ার পথ বন্ধ করে দেয়।")
 
 slides["types"] = light("types", "#EEF5EA",
     header("TYPES · প্রকারভেদ ও কারণ" + NOTE, "নেসাল পলিপাসের", "প্রকারভেদ ও কারণ")
@@ -87,10 +106,11 @@ slides["types"] = light("types", "#EEF5EA",
         ("নিউপ্লাস্টিক পলিপাস", "Neoplastic Polyps · জটিল প্রকৃতির। নাকের মধ্যে টিউমার বা ক্যান্সারের কারণে তৈরি হতে পারে। (আমাদের চিকিৎসার আওতাভুক্ত নয়)"),
     ], hi_last=True)
     + "<div></div>\n",
-    4, "তিন ধরনের পলিপাস: মিউকাস, ফাংগাল আর নিউপ্লাস্টিক। মনে করিয়ে দিন, নিউপ্লাস্টিক পলিপাস আমাদের চিকিৎসার আওতাভুক্ত নয়।")
+    5, "তিন ধরনের পলিপাস: মিউকাস, ফাংগাল আর নিউপ্লাস্টিক। মনে করিয়ে দিন, নিউপ্লাস্টিক পলিপাস আমাদের চিকিৎসার আওতাভুক্ত নয়।")
 
 slides["symptoms"] = light("symptoms", "#F6F7F0",
     header("SYMPTOMS · লক্ষণ ম্যাপিং" + NOTE, "পলিপাসের", "লক্ষণ")
+    + '<div style="display:flex;flex-direction:row;gap:32px;align-items:center">\n<div style="flex:1">\n'
     + grid_cards([
         ("নাক", "মাংস বৃদ্ধি পাওয়া, নাক ভরে যাওয়া, নাক বন্ধ হওয়া"),
         ("মাথা", "মাথার সামনের অংশে ভার ভার লাগা, প্রচণ্ড মাথা ব্যথা"),
@@ -98,9 +118,11 @@ slides["symptoms"] = light("symptoms", "#F6F7F0",
         ("ঘ্রাণ ও স্বাদ", "ঘ্রাণ নির্ণয়ের ক্ষমতা হারানো, খাবারে স্বাদ না পাওয়া"),
         ("শ্বাসপ্রশ্বাস", "শ্বাস নিতে কষ্ট বা হাঁসফাঁস হওয়া, ঘুমের মধ্যে নাক ডাকা"),
         ("অন্যান্য", "ঠান্ডা-সর্দি, হাঁচি, নাক থেকে রক্ত পড়া, চুলকানো"),
-    ])
-    + "<div></div>\n",
-    5, "পলিপাসের লক্ষণ ছয় জায়গায়: নাক, মাথা, চোখ ও কান, ঘ্রাণ ও স্বাদ, শ্বাসপ্রশ্বাস, আর অন্যান্য। এগুলো দিয়েই সচেতনতামূলক পোস্ট বানানো যায়।")
+    ], cols=2)
+    + "</div>\n"
+    + f'<img src="{P_NOSTRIL}" alt="নাকের ছিদ্রে পলিপাস দেখা যাচ্ছে" style="width:600px;height:337px;object-fit:cover;border-radius:24px;border:6px solid #FFFFFF;box-shadow:0 20px 50px rgba(18,53,42,0.18)">\n'
+    + "</div>\n",
+    6, "পলিপাসের লক্ষণ ছয় জায়গায়: নাক, মাথা, চোখ ও কান, ঘ্রাণ ও স্বাদ, শ্বাসপ্রশ্বাস, আর অন্যান্য। এগুলো দিয়েই সচেতনতামূলক পোস্ট বানানো যায়।")
 
 slides["history"] = light("history", "#EEF5EA",
     header("PATIENT HISTORY · প্রাথমিক রোগ নির্ণয়" + NOTE, "রোগীকে যে", "১১টি প্রশ্ন করতে হয়")
@@ -111,7 +133,7 @@ slides["history"] = light("history", "#EEF5EA",
         "ইতিপূর্বে কখনো শ্বাসকষ্ট হয়েছে কি কখনো?", "কোনো প্রকার ঔষধ নাকে ব্যবহার হয়েছে কি না?",
     ], 1, cols=2, size=26)
     + '<p style="font-size:26px;line-height:1.45;color:#4A6358"><b style="color:#1F7A42">নিশ্চিতকরণের জন্য:</b> X-ray PNS/DNS, Serum IgE total</p>\n',
-    6, "রোগীকে প্রথমে নেজাল স্পেকুলাম দিয়ে পরীক্ষা করে এই ১১টি প্রশ্ন করতে হয়। নিশ্চিত হওয়ার জন্য X-ray PNS/DNS আর Serum IgE total পরীক্ষা।")
+    7, "রোগীকে প্রথমে নেজাল স্পেকুলাম দিয়ে পরীক্ষা করে এই ১১টি প্রশ্ন করতে হয়। নিশ্চিত হওয়ার জন্য X-ray PNS/DNS আর Serum IgE total পরীক্ষা।")
 
 method_cards = []
 for i, (name, en, pts, hi) in enumerate([
@@ -132,7 +154,7 @@ for i, (name, en, pts, hi) in enumerate([
 slides["methods"] = light("methods", "#F6F7F0",
     header("COMPARISON · তুলনামূলক বিশ্লেষণ" + NOTE, "চিকিৎসা পদ্ধতির", "তুলনা")
     + '<div style="display:flex;flex-direction:row;gap:20px;align-items:stretch">\n' + "\n".join(method_cards) + "\n</div>\n<div></div>\n",
-    7, "চারটি চিকিৎসা পদ্ধতির তুলনা: এসিড দিয়ে পুড়িয়ে দেওয়া, সার্জারি, ইনজেকশন, আর ন্যাচারাল ক্রিম। ক্রিম প্রয়োগের পদ্ধতি অফলাইন প্র্যাকটিক্যাল ট্রেনিং-এ শেখানো হবে।")
+    8, "চারটি চিকিৎসা পদ্ধতির তুলনা: এসিড দিয়ে পুড়িয়ে দেওয়া, সার্জারি, ইনজেকশন, আর ন্যাচারাল ক্রিম। ক্রিম প্রয়োগের পদ্ধতি অফলাইন প্র্যাকটিক্যাল ট্রেনিং-এ শেখানো হবে।")
 
 food = "".join(
     '<div style="background:#FFFFFF;border:1px solid #DCE6D6;border-top:6px solid #F28C28;border-radius:22px;padding:24px 28px;display:flex;flex-direction:column;gap:8px">'
@@ -150,7 +172,7 @@ slides["food"] = light("food", "#EEF5EA",
     header("DIET · খাদ্যাভ্যাস নির্দেশিকা" + NOTE, "চিকিৎসা পরবর্তী", "নিষিদ্ধ খাবার")
     + '<p style="font-size:30px;line-height:1.45;color:#4A6358">এলার্জি নিয়ন্ত্রণের জন্য নিচের খাবারগুলো বর্জনীয়:</p>\n'
     + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">\n' + food + "</div>\n",
-    8, "চিকিৎসা পরবর্তী নিষিদ্ধ খাবার চার ভাগে: ঠান্ডা ও দুগ্ধজাত, ভারী প্রোটিন, এলার্জিক শাক-সবজি, আর নির্দিষ্ট মাছ।")
+    9, "চিকিৎসা পরবর্তী নিষিদ্ধ খাবার চার ভাগে: ঠান্ডা ও দুগ্ধজাত, ভারী প্রোটিন, এলার্জিক শাক-সবজি, আর নির্দিষ্ট মাছ।")
 
 care_box = (
     '<div style="flex:1;background:#FFFFFF;border:1px solid #DCE6D6;border-radius:24px;padding:30px 34px;display:flex;flex-direction:column;gap:16px">'
@@ -168,7 +190,7 @@ slides["care"] = light("care", "#F6F7F0",
     + care_box.format(c="#F28C28", fc="#3A1E05", ic="Clock", t="প্রথম ৩ দিনের বিশেষ পরামর্শ", li="".join(f"<li>{x}</li>" for x in [
         "হালকা তেঁতুল খাবেন", "লেবু খাওয়া সম্পূর্ণ নিষেধ", "নাকে কোনোভাবেই পানি দেওয়া যাবে না", "নাক সবসময় ভালোভাবে পরিষ্কার রাখতে হবে"]))
     + "\n</div>\n<div></div>\n",
-    9, "চিকিৎসা চলাকালীন করণীয় আর প্রথম তিন দিনের বিশেষ পরামর্শ। রোগীকে এগুলো আগেই বুঝিয়ে দিতে হয়।")
+    10, "চিকিৎসা চলাকালীন করণীয় আর প্রথম তিন দিনের বিশেষ পরামর্শ। রোগীকে এগুলো আগেই বুঝিয়ে দিতে হয়।")
 
 tiles = "".join(
     f'<img src="{src}" alt="{alt}" style="flex:1;width:252px;height:343px;object-fit:contain;border-radius:16px;background:#FFFFFF;border:1px solid #DCE6D6">\n'
@@ -178,7 +200,7 @@ slides["equipment"] = light("equipment", "#EEF5EA",
     header("EQUIPMENT · যন্ত্রপাতি" + NOTE, "পলিপাস চিকিৎসার", "প্রয়োজনীয় যন্ত্রপাতি")
     + '<div style="display:flex;flex-direction:row;gap:16px">\n' + tiles + "</div>\n"
     + note_pill("কোন যন্ত্র কীভাবে ব্যবহার করতে হয়, তা অফলাইন ট্রেনিং-এ হাতে-কলমে শেখানো হবে"),
-    10, "পলিপাস চিকিৎসার যন্ত্রপাতি: নেজাল স্পেকুলাম, সার্জিক্যাল গ্লাভস, সার্জিক্যাল মাস্ক, লম্বা কটন বাড, হেডলাইট আর আর্টারি ফরসেপস। ব্যবহার শেখানো হবে অফলাইন ট্রেনিং-এ।")
+    11, "পলিপাস চিকিৎসার যন্ত্রপাতি: নেজাল স্পেকুলাম, সার্জিক্যাল গ্লাভস, সার্জিক্যাল মাস্ক, লম্বা কটন বাড, হেডলাইট আর আর্টারি ফরসেপস। ব্যবহার শেখানো হবে অফলাইন ট্রেনিং-এ।")
 
 slides["practical"] = light("practical", "#F6F7F0",
     header("PRACTICAL TRAINING · অফলাইন প্রশিক্ষণ", "অফলাইন ট্রেনিং-এ", "হাতে-কলমে যা শিখবেন")
@@ -196,7 +218,7 @@ slides["practical"] = light("practical", "#F6F7F0",
       "</div>\n"
       f'<img src="{COMBO}" alt="পলিপা কেয়ার কম্বো প্যাক: ৮টি আইটেম একসাথে" style="width:520px;height:650px;object-fit:contain;border-radius:20px">\n'
       "</div>\n",
-    11, "এগুলো অনলাইনে শেখানো হবে না, শুধু অফলাইন প্র্যাকটিক্যাল ট্রেনিং-এ। পলিপা কেয়ার কম্বো প্যাকে একসাথে ৮টি আইটেম থাকে। প্রশিক্ষণ শেষে নিজেই পলিপাস সেবা দিয়ে আয় করার সুযোগ। ফি: [ফি], স্থান: [স্থান], মেয়াদ: [সময়]।")
+    12, "এগুলো অনলাইনে শেখানো হবে না, শুধু অফলাইন প্র্যাকটিক্যাল ট্রেনিং-এ। পলিপা কেয়ার কম্বো প্যাকে একসাথে ৮টি আইটেম থাকে। প্রশিক্ষণ শেষে নিজেই পলিপাস সেবা দিয়ে আয় করার সুযোগ। ফি: [ফি], স্থান: [স্থান], মেয়াদ: [সময়]।")
 
 slides["task"] = light("task", "#EEF5EA",
     header("TODAY'S TASK · আজকের টাস্ক", "আজকের", "Task")
@@ -207,7 +229,7 @@ slides["task"] = light("task", "#EEF5EA",
       '<p style="font-size:28px;line-height:1.45;background:#FFFFFF;border:1px solid #DCE6D6;border-radius:20px;padding:22px 28px"><b>পোস্ট ১:</b> <span style="color:#4A6358">পলিপাসের লক্ষণ</span></p>\n'
       '<p style="font-size:28px;line-height:1.45;background:#FFFFFF;border:1px solid #DCE6D6;border-radius:20px;padding:22px 28px"><b>পোস্ট ২:</b> <span style="color:#4A6358">কোন খাবার এড়িয়ে চলবেন</span></p>\n'
       '<p style="font-size:28px;line-height:1.45;background:#FFFFFF;border:1px solid #DCE6D6;border-radius:20px;padding:22px 28px"><b>নোট:</b> <span style="color:#4A6358">আজকের বিষয় খাতায় লিখুন</span></p>\n</div>\n',
-    12, "আজকের কাজ: নির্ভরযোগ্য তথ্যের ভিত্তিতে পলিপাস নিয়ে শিক্ষামূলক কনটেন্ট তৈরি ও প্রচার। যেমন লক্ষণ নিয়ে একটি, আর বর্জনীয় খাবার নিয়ে একটি পোস্ট। জমার শেষ সময়: [সময়]।")
+    13, "আজকের কাজ: নির্ভরযোগ্য তথ্যের ভিত্তিতে পলিপাস নিয়ে শিক্ষামূলক কনটেন্ট তৈরি ও প্রচার। যেমন লক্ষণ নিয়ে একটি, আর বর্জনীয় খাবার নিয়ে একটি পোস্ট। জমার শেষ সময়: [সময়]।")
 
 slides["closing"] = f"""<section id="closing" data-transition="fade" style="background:#12352A;color:#FFFFFF;{FONT};padding:128px 160px 160px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:32px">
 {DARK_BG}
@@ -217,12 +239,12 @@ slides["closing"] = f"""<section id="closing" data-transition="fade" style="back
 <hr style="border-top:3px solid #F28C28;width:160px">
 <p style="{HEAD};font-size:44px;font-weight:800;color:#A6D65A">আল ইনসাফ লাইফ কেয়ার</p>
 <div style="display:flex;flex-direction:row;gap:16px;align-items:center;background:rgba(255,255,255,0.08);border:1px solid #2F5A47;border-radius:999px;padding:16px 40px"><x-icon name="Chat" style="color:#A6D65A;width:36px;height:36px"></x-icon><p style="font-size:34px;font-weight:700;color:#FFFFFF">+880 1332-140494</p></div>
-<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;font-weight:700;color:#9DB8AA;text-align:right">{num(13)} / {num(TOTAL)}</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;font-weight:700;color:#9DB8AA;text-align:right">{num(14)} / {num(TOTAL)}</p>
 <aside>আগামীকাল একাদশ দিন: Licuria Safe। পরের ক্লাসের সময়: [তারিখ ও সময়]।</aside>
 </section>
 """
 
-order = ["cover", "defense", "what", "types", "symptoms", "history", "methods", "food", "care", "equipment", "practical", "task", "closing"]
+order = ["cover", "defense", "what", "sinus", "types", "symptoms", "history", "methods", "food", "care", "equipment", "practical", "task", "closing"]
 for sid in order:
     (SL / f"{sid}.html").write_text(slides[sid], encoding="utf-8")
 
