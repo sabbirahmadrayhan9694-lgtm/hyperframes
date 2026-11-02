@@ -14,8 +14,7 @@
     "history",
     "hadith1",
     "hadith2",
-    "benefits1",
-    "benefits2",
+    "problems",
     "pain",
     "blood",
     "task",
@@ -27,7 +26,7 @@
       "start": "cover"
     },
     "s2": {
-      "description": "হাদিস ও উপকারিতা",
+      "description": "হাদিস ও যেসব সমস্যায় হিজামা নেওয়া হয়",
       "start": "hadith1"
     },
     "s3": {
