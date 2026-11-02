@@ -9,8 +9,7 @@
   "cover": "cover",
   "order": [
     "cover",
-    "nogo1",
-    "nogo2",
+    "nogo",
     "duty",
     "nomagic",
     "faq_med",
