@@ -1,0 +1,49 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-02T10:00:00Z"
+  },
+  "lists": "css",
+  "title": "অষ্টম দিন — হিজামা: প্রথম ক্লাস",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "what",
+    "types",
+    "history",
+    "hadith1",
+    "hadith2",
+    "benefits1",
+    "benefits2",
+    "pain",
+    "blood",
+    "task",
+    "closing"
+  ],
+  "sections": {
+    "s1": {
+      "description": "হিজামা কী, কাপিং-এর ধরন ও ইতিহাস",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "হাদিস ও উপকারিতা",
+      "start": "hadith1"
+    },
+    "s3": {
+      "description": "কার্যপদ্ধতি, আজকের কাজ ও পরের ক্লাস",
+      "start": "pain"
+    }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
