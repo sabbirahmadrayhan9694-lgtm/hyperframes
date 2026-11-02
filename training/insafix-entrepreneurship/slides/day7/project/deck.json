@@ -1,0 +1,49 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-02T09:00:00Z"
+  },
+  "lists": "css",
+  "title": "সপ্তম দিন — সেলস পরিস্থিতি ও বিক্রির কৌশল",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "recap",
+    "journey",
+    "talk",
+    "objections",
+    "followup",
+    "order",
+    "close",
+    "problems",
+    "roleplay",
+    "assignment",
+    "closing"
+  ],
+  "sections": {
+    "s1": {
+      "description": "পণ্য চেনা থেকে বিক্রির পথ",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "কথা, আপত্তি, ফলোআপ, অর্ডার ও বিক্রি সম্পন্ন",
+      "start": "talk"
+    },
+    "s3": {
+      "description": "সমস্যা, অনুশীলন, আজকের কাজ ও সামনের পথ",
+      "start": "problems"
+    }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
