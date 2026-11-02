@@ -15,7 +15,6 @@
     "hadith1",
     "hadith2",
     "problems",
-    "pain",
     "blood",
     "task",
     "closing"
@@ -26,12 +25,12 @@
       "start": "cover"
     },
     "s2": {
-      "description": "হাদিস ও যেসব সমস্যায় হিজামা নেওয়া হয়",
+      "description": "হাদিস ও হিজামার মাধ্যমে যেসব রোগের চিকিৎসা হয়",
       "start": "hadith1"
     },
     "s3": {
-      "description": "কার্যপদ্ধতি, আজকের কাজ ও পরের ক্লাস",
-      "start": "pain"
+      "description": "রক্ত কোথা থেকে আসে, আজকের কাজ ও পরের ক্লাস",
+      "start": "blood"
     }
   },
   "faces": {

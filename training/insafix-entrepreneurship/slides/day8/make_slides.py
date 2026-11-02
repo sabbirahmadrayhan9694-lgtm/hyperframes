@@ -9,7 +9,11 @@ exec(_day5.split("slides = {}")[0])
 ROOT = Path(__file__).parent / "project"
 SL = ROOT / "slides"
 SL.mkdir(parents=True, exist_ok=True)
-TOTAL = 11
+TOTAL = 10
+U_WET = "/_blob/f39c3d0ed327695228ec83bad60b896d"
+U_SET = "/_blob/68c1322bf026da234c18a519c06d1b2d"
+U_DRY = "/_blob/4beb82a7cf8d923dd64f3c261f23b9f5"
+U_FIRE = "/_blob/9d7aa11c278cf79768f0d5d87ca57d15"
 IMG_DRY = "/_blob/150623ec5e6f437c459054eff8203ffe"
 IMG_WET = "/_blob/e4fcb64cb76a779e14db15f0c43fbcf4"
 IMG_FIRE = "/_blob/c2217916bf574e251ceea54afba3c5da"
@@ -65,16 +69,16 @@ slides["cover"] = f"""<section id="cover" data-transition="fade" style="backgrou
 <div style="display:flex;flex-direction:row;gap:36px;align-items:center;width:1120px">
 <div style="display:flex;flex-direction:row;gap:16px;align-items:center"><div style="background:#2E9E5B;border-radius:999px;padding:16px;display:flex"><x-icon name="Book" style="color:#FFFFFF;width:40px;height:40px"></x-icon></div><p style="font-size:28px;font-weight:700;line-height:1.15;color:#12352A">পরিচিতি<br><span style="color:#1F7A42">ও ধরন</span></p></div>
 <div style="display:flex;flex-direction:row;gap:16px;align-items:center"><div style="background:#2E9E5B;border-radius:999px;padding:16px;display:flex"><x-icon name="Clock" style="color:#FFFFFF;width:40px;height:40px"></x-icon></div><p style="font-size:28px;font-weight:700;line-height:1.15;color:#12352A">ইতিহাস<br><span style="color:#1F7A42">ও হাদিস</span></p></div>
-<div style="display:flex;flex-direction:row;gap:16px;align-items:center"><div style="background:#2E9E5B;border-radius:999px;padding:16px;display:flex"><x-icon name="Activity" style="color:#FFFFFF;width:40px;height:40px"></x-icon></div><p style="font-size:28px;font-weight:700;line-height:1.15;color:#12352A">কোন সমস্যায়<br><span style="color:#1F7A42">ও কার্যপদ্ধতি</span></p></div>
+<div style="display:flex;flex-direction:row;gap:16px;align-items:center"><div style="background:#2E9E5B;border-radius:999px;padding:16px;display:flex"><x-icon name="Activity" style="color:#FFFFFF;width:40px;height:40px"></x-icon></div><p style="font-size:28px;font-weight:700;line-height:1.15;color:#12352A">রোগের<br><span style="color:#1F7A42">চিকিৎসা</span></p></div>
 </div>
 <div style="display:flex;flex-direction:row;gap:18px;align-items:center;background:#FFFFFF;border:1px solid #CFE0C6;border-radius:999px;padding:14px 32px;width:1120px;box-shadow:0 6px 20px rgba(18,53,42,0.08)">
 <x-icon name="Book" style="color:#2E9E5B;width:36px;height:36px"></x-icon>
 <p style="font-size:28px;color:#12352A"><b style="color:#B85A0C">খাতা-কলম নিন:</b> আজকের প্রতিটি বিষয় নোট করে রাখুন</p>
 </div>
-<div style="position:absolute;left:1370px;top:260px;width:420px;height:420px;border-radius:50%;border:6px solid #2E9E5B;background:#FFFFFF;box-shadow:0 20px 60px rgba(18,53,42,0.12);display:flex;flex-direction:column;align-items:center;justify-content:center">
-<p style="{HEAD};font-size:56px;font-weight:800;letter-spacing:6px;color:#12352A">DAY</p>
-<p style="{HEAD};font-size:200px;font-weight:800;line-height:1;color:#1F8A4C">০৮</p>
-<p style="font-size:26px;font-weight:600;color:#B85A0C">হিজামা · ক্লাস ১</p>
+<img src="{U_SET}" alt="হিজামার কাপ ও পাম্প" style="position:absolute;left:1292px;top:190px;width:500px;height:334px;object-fit:cover;border-radius:28px;border:6px solid #FFFFFF;box-shadow:0 20px 60px rgba(18,53,42,0.18)">
+<div style="position:absolute;left:1220px;top:440px;width:200px;height:200px;border-radius:50%;border:6px solid #2E9E5B;background:#FFFFFF;box-shadow:0 14px 40px rgba(18,53,42,0.16);display:flex;flex-direction:column;align-items:center;justify-content:center">
+<p style="{HEAD};font-size:30px;font-weight:800;letter-spacing:4px;color:#12352A">DAY</p>
+<p style="{HEAD};font-size:96px;font-weight:800;line-height:1;color:#1F8A4C">০৮</p>
 </div>
 <aside>আজ থেকে হিজামার ক্লাস শুরু। এই অনলাইন ক্লাসগুলোতে হিজামার তত্ত্বের অংশ শেখানো হবে, যা অফলাইন প্র্যাকটিক্যাল ট্রেনিং-এ আর আলোচনা হবে না। তাই সবাইকে খাতা-কলম নিয়ে প্রতিটি বিষয় নোট করে রাখতে বলুন।</aside>
 </section>
@@ -87,14 +91,14 @@ slides["what"] = light("what", "#F6F7F0",
       f'<p style="{HEAD};font-size:46px;font-weight:700;line-height:1.4;color:#12352A">হিজামা হলো একটি চিকিৎসা পদ্ধতি যেখানে নির্দিষ্ট স্থানে কাপ বসিয়ে হালকা <span style="color:#1F8A4C">“স্ক্র্যাচ” (আঁচড় দেওয়া)</span> করে রক্ত বের করা হয়।</p>\n'
       '<hr style="border-top:4px solid #F28C28;width:140px">\n'
       '<p style="font-size:30px;line-height:1.45;color:#4A6358">ছবিতে দেখুন: পিঠে কাপ বসিয়ে হিজামা করা হচ্ছে</p>\n</div>\n'
-      f'<img src="{IMG_WET}" alt="পিঠে কাপ বসিয়ে হিজামা করা হচ্ছে" style="width:760px;height:428px;object-fit:cover;border-radius:28px;border:6px solid #FFFFFF;box-shadow:0 20px 50px rgba(18,53,42,0.18)">\n'
+      f'<img src="{U_WET}" alt="পিঠে কাপ বসিয়ে হিজামা করা হচ্ছে" style="width:700px;height:527px;object-fit:cover;border-radius:28px;border:6px solid #FFFFFF;box-shadow:0 20px 50px rgba(18,53,42,0.18)">\n'
       '</div>\n<div></div>\n',
     2, "হিজামা হলো একটি চিকিৎসা পদ্ধতি যেখানে নির্দিষ্ট স্থানে কাপ বসিয়ে হালকা স্ক্র্যাচ বা আঁচড় দিয়ে রক্ত বের করা হয়। ছবিটি দেখিয়ে বুঝিয়ে দিন।")
 
 types = [
-    (IMG_DRY, "ড্রাই কাপিং", "ত্বকে শুধু কাপ বসিয়ে ভ্যাকুয়াম তৈরি করা হয়, কোনো আঁচড় দেওয়া হয় না।", False),
+    (U_DRY, "ড্রাই কাপিং", "ত্বকে শুধু কাপ বসিয়ে ভ্যাকুয়াম তৈরি করা হয়, কোনো আঁচড় দেওয়া হয় না।", False),
     (IMG_WET, "ওয়েট কাপিং (হিজামা)", "কাপ বসানোর পর ত্বকে হালকা আঁচড় দিয়ে রক্ত বের করা হয়। এটিই প্রকৃত হিজামা।", True),
-    (IMG_FIRE, "ফায়ার কাপিং", "কাপের ভেতরে আগুন ব্যবহার করে অক্সিজেন বের করে ভ্যাকুয়াম তৈরি করা হয়।", False),
+    (U_FIRE, "ফায়ার কাপিং", "কাপের ভেতরে আগুন ব্যবহার করে অক্সিজেন বের করে ভ্যাকুয়াম তৈরি করা হয়।", False),
 ]
 tcards = []
 for i, (img, name, desc, hi) in enumerate(types, 1):
@@ -170,23 +174,16 @@ for i, (t, d) in enumerate(problems, 1):
         f'<p style="font-size:28px;line-height:1.5;color:#4A6358">{d}</p></div>'
     )
 slides["problems"] = light("problems", "#EEF5EA",
-    header("WHEN TO TAKE HIJAMA" + NOTE, "যেসব সমস্যায়", "হিজামা নেওয়া হয়")
+    header("TREATMENT · রোগের তালিকা" + NOTE, "হিজামার মাধ্যমে", "যেসব রোগের চিকিৎসা হয়")
     + '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px">\n' + "\n".join(pcards) + "\n</div>\n<div></div>\n",
-    7, "কোন কোন সমস্যার জন্য মানুষ হিজামা নেয়, ছয়টি ভাগে: ব্যথা জনিত সমস্যা, পেট ও হজমের সমস্যা, রক্ত সঞ্চালন ও হার্ট, হরমোন ও ঘুম, ত্বকের সমস্যা, আর শারীরিক দুর্বলতা। প্রতিটি ভাগ খাতায় নোট করতে বলুন।")
-
-slides["pain"] = light("pain", "#EEF5EA",
-    header("HOW IT WORKS" + NOTE, "হিজামা করালে কিভাবে", "ব্যথা কমে?")
-    + cards([("১", "রক্ত জমে চাপ", "ব্যথার জায়গায় সাধারণত রক্ত জমে চাপ তৈরি হয়"), ("২", "চাপযুক্ত রক্ত বের হয়", "হিজামার মাধ্যমে সেই রক্ত বের হয়ে যায়"),
-             ("৩", "নার্ভের চাপ কমে", "রক্ত চলাচল ভালো হয়"), ("৪", "ব্যথা হালকা লাগে", "এ কারণেই হিজামার পর")], icons=False, arrows=True)
-    + "<div></div>\n",
-    8, "ব্যথার জায়গায় সাধারণত রক্ত জমে চাপ তৈরি হয়। হিজামার মাধ্যমে সেই চাপযুক্ত রক্ত বের হয়ে যায়। এর ফলে নার্ভের উপর চাপ কমে এবং রক্ত চলাচল ভালো হয়। এ কারণেই হিজামার পর ব্যথা হালকা লাগে।")
+    7, "হিজামার মাধ্যমে যেসব রোগের চিকিৎসা হয়, ছয়টি ভাগে: ব্যথা জনিত সমস্যা, পেট ও হজমের সমস্যা, রক্ত সঞ্চালন ও হার্ট, হরমোন ও ঘুম, ত্বকের সমস্যা, আর শারীরিক দুর্বলতা। প্রতিটি ভাগ খাতায় নোট করতে বলুন।")
 
 slides["blood"] = light("blood", "#F6F7F0",
     header("BLOOD SOURCE" + NOTE, "হিজামায় রক্ত আসে", "কোথা থেকে?")
     + cards([("Warning", "শিরা কাটা হয় না", "হিজামায় শিরা বা ভেইন কাটা হয় না"), ("Search", "চামড়ার উপরের স্তর", "সেখান থেকে রক্ত বের হয়"),
              ("Activity", "জমে থাকা রক্ত", "অক্সিজেন কম থাকা রক্ত"), ("Verified", "নিরাপদ পদ্ধতি", "তাই নিরাপদ হিসেবে গণ্য হয়")])
     + "<div></div>\n",
-    9, "হিজামায় শিরা বা ভেইন কাটা হয় না। চামড়ার উপরের স্তর থেকে রক্ত বের হয়। এটি মূলত জমে থাকা, অক্সিজেন কম থাকা রক্ত। তাই হিজামা নিরাপদ পদ্ধতি হিসেবে গণ্য হয়।")
+    8, "হিজামায় শিরা বা ভেইন কাটা হয় না। চামড়ার উপরের স্তর থেকে রক্ত বের হয়। এটি মূলত জমে থাকা, অক্সিজেন কম থাকা রক্ত। তাই হিজামা নিরাপদ পদ্ধতি হিসেবে গণ্য হয়।")
 
 slides["task"] = light("task", "#EEF5EA",
     header("TODAY'S TASK · আজকের টাস্ক", "আজকের", "Task")
@@ -196,7 +193,7 @@ slides["task"] = light("task", "#EEF5EA",
     + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">\n'
       '<p style="font-size:30px;line-height:1.45;background:#FFFFFF;border:1px solid #DCE6D6;border-radius:20px;padding:24px 32px"><b>নোট:</b> <span style="color:#4A6358">আজকের সব বিষয় খাতায় গুছিয়ে লিখুন</span></p>\n'
       '<p style="font-size:30px;line-height:1.45;background:#FFFFFF;border:1px solid #DCE6D6;border-radius:20px;padding:24px 32px"><b>পোস্ট:</b> <span style="color:#4A6358">হিজামা কী ও এর ইতিহাস নিয়ে ১টি পোস্ট</span></p>\n</div>\n',
-    10, "আজকের কাজ: হিজামা সম্পর্কে শিক্ষামূলক কনটেন্ট তৈরি ও প্রচার। আর আজকের সব বিষয় খাতায় গুছিয়ে নোট করা। রিপোর্ট জমার শেষ সময়: [সময়]।")
+    9, "আজকের কাজ: হিজামা সম্পর্কে শিক্ষামূলক কনটেন্ট তৈরি ও প্রচার। আর আজকের সব বিষয় খাতায় গুছিয়ে নোট করা। রিপোর্ট জমার শেষ সময়: [সময়]।")
 
 slides["closing"] = f"""<section id="closing" data-transition="fade" style="background:#12352A;color:#FFFFFF;{FONT};padding:128px 160px 160px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:32px">
 {DARK_BG}
@@ -206,12 +203,12 @@ slides["closing"] = f"""<section id="closing" data-transition="fade" style="back
 <hr style="border-top:3px solid #F28C28;width:160px">
 <p style="{HEAD};font-size:44px;font-weight:800;color:#A6D65A">আল ইনসাফ লাইফ কেয়ার</p>
 <div style="display:flex;flex-direction:row;gap:16px;align-items:center;background:rgba(255,255,255,0.08);border:1px solid #2F5A47;border-radius:999px;padding:16px 40px"><x-icon name="Chat" style="color:#A6D65A;width:36px;height:36px"></x-icon><p style="font-size:34px;font-weight:700;color:#FFFFFF">+880 1332-140494</p></div>
-<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;font-weight:700;color:#9DB8AA;text-align:right">{num(11)} / {num(TOTAL)}</p>
+<p style="position:absolute;right:128px;bottom:64px;width:200px;font-size:24px;font-weight:700;color:#9DB8AA;text-align:right">{num(10)} / {num(TOTAL)}</p>
 <aside>আগামীকাল হিজামার দ্বিতীয় ক্লাস। মনে করিয়ে দিন, হাতে-কলমে পুরো পদ্ধতি শেখানো হবে অফলাইন প্র্যাকটিক্যাল ট্রেনিং-এ। পরের ক্লাসের সময়: [তারিখ ও সময়]।</aside>
 </section>
 """
 
-order = ["cover", "what", "types", "history", "hadith1", "hadith2", "problems", "pain", "blood", "task", "closing"]
+order = ["cover", "what", "types", "history", "hadith1", "hadith2", "problems", "blood", "task", "closing"]
 for sid in order:
     (SL / f"{sid}.html").write_text(slides[sid], encoding="utf-8")
 
@@ -224,8 +221,8 @@ deck = {
     "order": order,
     "sections": {
         "s1": {"description": "হিজামা কী, কাপিং-এর ধরন ও ইতিহাস", "start": "cover"},
-        "s2": {"description": "হাদিস ও যেসব সমস্যায় হিজামা নেওয়া হয়", "start": "hadith1"},
-        "s3": {"description": "কার্যপদ্ধতি, আজকের কাজ ও পরের ক্লাস", "start": "pain"},
+        "s2": {"description": "হাদিস ও হিজামার মাধ্যমে যেসব রোগের চিকিৎসা হয়", "start": "hadith1"},
+        "s3": {"description": "রক্ত কোথা থেকে আসে, আজকের কাজ ও পরের ক্লাস", "start": "blood"},
     },
     "faces": {
         "baloo-da-2": {"family": "Baloo Da 2", "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"},
