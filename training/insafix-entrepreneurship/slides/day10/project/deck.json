@@ -1,0 +1,50 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-02T19:45:00Z"
+  },
+  "lists": "css",
+  "title": "দশম দিন — পলিপাস",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "defense",
+    "what",
+    "types",
+    "symptoms",
+    "history",
+    "methods",
+    "food",
+    "care",
+    "equipment",
+    "practical",
+    "task",
+    "closing"
+  ],
+  "sections": {
+    "s1": {
+      "description": "নাক, সাইনাস ও পলিপাসের প্রাথমিক ধারণা",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "লক্ষণ, রোগীর হিস্ট্রি ও চিকিৎসা পদ্ধতির তুলনা",
+      "start": "symptoms"
+    },
+    "s3": {
+      "description": "খাদ্যাভ্যাস, সতর্কতা, যন্ত্রপাতি, প্রশিক্ষণ ও আজকের কাজ",
+      "start": "food"
+    }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
