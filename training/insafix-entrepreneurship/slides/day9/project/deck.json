@@ -1,0 +1,50 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-02T14:20:00Z"
+  },
+  "lists": "css",
+  "title": "নবম দিন — হিজামা: দ্বিতীয় ক্লাস",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "nogo1",
+    "nogo2",
+    "duty",
+    "nomagic",
+    "faq_med",
+    "faq_date",
+    "faq_after",
+    "equipment",
+    "practical",
+    "marketing",
+    "task",
+    "closing"
+  ],
+  "sections": {
+    "s1": {
+      "description": "নিরাপত্তা ও থেরাপিস্টের পেশাগত দায়িত্ব",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "সেবা গ্রহণকারীর সাধারণ প্রশ্ন",
+      "start": "faq_med"
+    },
+    "s3": {
+      "description": "যন্ত্রপাতি, প্র্যাকটিক্যাল ট্রেনিং, মার্কেটিং ও আজকের কাজ",
+      "start": "equipment"
+    }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
