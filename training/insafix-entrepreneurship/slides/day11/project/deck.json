@@ -1,0 +1,51 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-03T00:20:00Z"
+  },
+  "lists": "css",
+  "title": "একাদশ দিন — Leucorrhea Safe",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "family",
+    "what",
+    "signs",
+    "causes",
+    "silent",
+    "product",
+    "making",
+    "awareness",
+    "business",
+    "responsibility",
+    "task",
+    "recap",
+    "closing"
+  ],
+  "sections": {
+    "s1": {
+      "description": "নারীস্বাস্থ্য, সাদা স্রাব, লক্ষণ ও কারণ",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "Leucorrhea Safe প্রোডাক্ট ও স্বাস্থ্য সচেতনতা",
+      "start": "product"
+    },
+    "s3": {
+      "description": "উদ্যোক্তার দায়িত্ব, আজকের কাজ ও সারসংক্ষেপ",
+      "start": "business"
+    }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
