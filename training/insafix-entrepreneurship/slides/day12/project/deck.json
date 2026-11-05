@@ -1,0 +1,50 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-05T10:20:00Z"
+  },
+  "lists": "css",
+  "title": "দ্বাদশ দিন — Costo Clear",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "what",
+    "causes",
+    "complications",
+    "truth",
+    "product",
+    "natural",
+    "making",
+    "opportunity",
+    "income",
+    "mindset",
+    "task",
+    "closing"
+  ],
+  "sections": {
+    "s1": {
+      "description": "কোষ্ঠকাঠিন্য: সংজ্ঞা, কারণ ও জটিলতা",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "Costo Clear প্রোডাক্ট ও তৈরির ধারণা",
+      "start": "product"
+    },
+    "s3": {
+      "description": "ব্যবসার সুযোগ, আয়ের পথ ও আজকের কাজ",
+      "start": "opportunity"
+    }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
