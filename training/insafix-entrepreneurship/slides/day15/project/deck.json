@@ -1,0 +1,48 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-06T14:20:00Z"
+  },
+  "lists": "css",
+  "title": "পঞ্চদশ দিন — ফলাফল পর্যালোচনা ও ভবিষ্যৎ পরিকল্পনা",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "journey",
+    "skills",
+    "progress",
+    "goals",
+    "practical",
+    "next",
+    "together",
+    "principle",
+    "task",
+    "closing"
+  ],
+  "sections": {
+    "s1": {
+      "description": "১৫ দিনের কাজ, দক্ষতা ও বিক্রির মূল্যায়ন",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "ভবিষ্যৎ লক্ষ্য, প্র্যাকটিক্যাল প্রশিক্ষণ ও পরবর্তী পরিকল্পনা",
+      "start": "goals"
+    },
+    "s3": {
+      "description": "Al-Insaf-এর সঙ্গে কাজ, মূল নীতি ও শেষ টাস্ক",
+      "start": "together"
+    }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
