@@ -1,0 +1,50 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-06T14:00:00Z"
+  },
+  "lists": "css",
+  "title": "চতুর্দশ দিন — সেলস রিভিউ ও ব্যবসার হিসাব",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "journey",
+    "products",
+    "progress",
+    "followup",
+    "orders",
+    "ledger",
+    "formula",
+    "profit",
+    "problems",
+    "plan",
+    "task",
+    "closing"
+  ],
+  "sections": {
+    "s1": {
+      "description": "মার্কেটিং ও বিক্রির অগ্রগতি পর্যালোচনা",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "কাস্টমার ফলোআপ ও অর্ডার ব্যবস্থাপনা",
+      "start": "followup"
+    },
+    "s3": {
+      "description": "বিক্রয়, খরচ ও লাভের হিসাব, সমস্যা ও পরিকল্পনা",
+      "start": "formula"
+    }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
