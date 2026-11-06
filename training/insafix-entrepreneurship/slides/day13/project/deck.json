@@ -1,0 +1,48 @@
+{
+  "v": 4,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-06T10:00:00Z"
+  },
+  "lists": "css",
+  "title": "ত্রয়োদশ দিন — হিজামা: তৃতীয় ক্লাস",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "skills",
+    "duty",
+    "handling",
+    "inform",
+    "trust",
+    "service",
+    "marketing",
+    "next",
+    "task",
+    "closing"
+  ],
+  "sections": {
+    "s1": {
+      "description": "হিজামা সেবার দক্ষতা ও দায়িত্ব",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "কাস্টমার হ্যান্ডলিং ও সেবার পরিচিতি",
+      "start": "handling"
+    },
+    "s3": {
+      "description": "মার্কেটিং, প্রশিক্ষণের পরবর্তী ধাপ ও আজকের কাজ",
+      "start": "marketing"
+    }
+  },
+  "faces": {
+    "baloo-da-2": {
+      "family": "Baloo Da 2",
+      "href": "https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500..800&display=swap"
+    },
+    "hind-siliguri": {
+      "family": "Hind Siliguri",
+      "href": "https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    }
+  },
+  "designSystems": []
+}
