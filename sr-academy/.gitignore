@@ -1,0 +1,10 @@
+# generated per video by build.mjs
+v*/assets/
+v*/renders/
+v*/.hyperframes/
+v*/index.html
+*.mp4
+# personal media and vendored libs stay local (not pushed); see README.md
+_vendor/media/
+_vendor/lib/
+_vendor/logo-*.png
