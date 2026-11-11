@@ -51,7 +51,7 @@ function build(dir) {
     ? `<audio id="bgm" class="clip" src="assets/${meta.music}" data-start="0" data-duration="${dur}" data-track-index="30" data-volume="${meta.musicVol ?? 0.35}"></audio>`
     : "";
   const html = `<!doctype html>
-<html lang="bn">
+<html lang="bn" data-theme="${process.env.THEME || meta.theme || "clean"}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=${w}, height=${h}" />
@@ -91,11 +91,18 @@ ${mod ? `    <script type="module">\nimport { mount3D } from "./assets/sr3d.js";
   fs.mkdirSync(path.join(a, "sfx"), { recursive: true });
   for (const [name] of meta.sfx || [])
     fs.copyFileSync(path.join(V, "sfx", name + ".mp3"), path.join(a, "sfx", name + ".mp3"));
-  for (const f of ["sr3d.js", "logo-mark.png", "logo-full.png"])
+  for (const f of ["sr3d.js", "logo-mark.png", "logo-mark-t.png", "logo-full.png"])
     fs.copyFileSync(path.join(V, f), path.join(a, f));
   fs.mkdirSync(path.join(a, "media"), { recursive: true });
   for (const f of [...(meta.media || []), ...(meta.vo ? [meta.vo] : [])])
     fs.copyFileSync(path.join(V, "media", f), path.join(a, "media", f));
+  for (const [, set, name] of src.matchAll(/icons\/(logos|emoji|flat)\/([\w-]+)\.svg/g)) {
+    fs.mkdirSync(path.join(a, "icons", set), { recursive: true });
+    fs.copyFileSync(
+      path.join(V, "icons", set, name + ".svg"),
+      path.join(a, "icons", set, name + ".svg"),
+    );
+  }
   if (meta.music) fs.copyFileSync(path.join(V, meta.music), path.join(a, meta.music));
   if (!fs.existsSync(path.join(p, "hyperframes.json")))
     fs.writeFileSync(

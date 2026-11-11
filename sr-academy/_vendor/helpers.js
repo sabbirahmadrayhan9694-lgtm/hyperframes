@@ -112,3 +112,6 @@ $$("[data-icon]").forEach(
       Number(el.dataset.sw || 1.8),
     )),
 );
+
+const CV = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const ACC_RGB = CV("--rgb");

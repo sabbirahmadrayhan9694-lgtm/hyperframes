@@ -8,8 +8,107 @@ import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import { TextGeometry } from "three/addons/geometries/TextGeometry.js";
 import { FontLoader } from "three/addons/loaders/FontLoader.js";
+import { SVGLoader } from "three/addons/loaders/SVGLoader.js";
 
-const G = 0x5cff2e,
+let LAST_T = 0;
+window.addEventListener("hf-seek", (e) => (LAST_T = e.detail.time));
+
+// Real logo/icon on a glossy 3D app-tile (logo stays crisp and recognisable)
+function loadSvgTile(url, size = 1.2, tile = true) {
+  return new Promise((resolve) => {
+    new THREE.ImageLoader().load(url, (img) => {
+      const c = document.createElement("canvas");
+      c.width = c.height = 512;
+      const ctx = c.getContext("2d");
+      const r = img.width / img.height;
+      const w = r >= 1 ? 512 : 512 * r,
+        h = r >= 1 ? 512 / r : 512;
+      ctx.drawImage(img, (512 - w) / 2, (512 - h) / 2, w, h);
+      const tex = new THREE.CanvasTexture(c);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.anisotropy = 4;
+      const g = new THREE.Group();
+      const face = new THREE.Mesh(
+        new THREE.PlaneGeometry(size * (tile ? 0.66 : 1), size * (tile ? 0.66 : 1)),
+        new THREE.MeshBasicMaterial({ map: tex, transparent: true, toneMapped: false }),
+      );
+      if (tile) {
+        const box = new THREE.Mesh(
+          new RoundedBoxGeometry(size, size, size * 0.22, 6, size * 0.2),
+          new THREE.MeshPhysicalMaterial({
+            color: 0xffffff,
+            roughness: 0.25,
+            clearcoat: 1,
+            clearcoatRoughness: 0.1,
+          }),
+        );
+        g.add(box);
+        face.position.z = size * 0.111 + 0.002;
+      }
+      g.add(face);
+      resolve(g);
+    });
+  });
+}
+
+// Load a real SVG icon/logo and extrude it into a glossy 3D group (size = target width in world units)
+function loadSvg3d(url, size = 2, depth = 0.18) {
+  return new Promise((resolve) => {
+    new THREE.FileLoader().load(url, (text) => {
+      const grads = {};
+      const doc = new DOMParser().parseFromString(text, "image/svg+xml");
+      doc.querySelectorAll("linearGradient, radialGradient").forEach((g) => {
+        const stops = [...g.querySelectorAll("stop")];
+        const mid = stops[Math.floor(stops.length / 2)] || stops[0];
+        if (mid) grads[g.id] = mid.getAttribute("stop-color") || "#888";
+      });
+      const data = new SVGLoader().parse(text);
+      const inner = new THREE.Group();
+      data.paths.forEach((path, i) => {
+        let fill = path.userData.style.fill;
+        if (!fill || fill === "none") return;
+        const m = /url\(#([^)]+)\)/.exec(fill);
+        if (m) fill = grads[m[1]] || "#888";
+        const color = new THREE.Color().setStyle(fill);
+        const mat = new THREE.MeshPhysicalMaterial({
+          color,
+          roughness: 0.32,
+          metalness: 0.05,
+          clearcoat: 1,
+          clearcoatRoughness: 0.12,
+        });
+        SVGLoader.createShapes(path).forEach((shape) => {
+          const geo = new THREE.ExtrudeGeometry(shape, {
+            depth: 1,
+            bevelEnabled: true,
+            bevelThickness: 0.25,
+            bevelSize: 0.18,
+            bevelSegments: 3,
+            curveSegments: 10,
+          });
+          const mesh = new THREE.Mesh(geo, mat);
+          mesh.position.z = i * 0.35;
+          mesh.userData.pathIndex = i;
+          inner.add(mesh);
+        });
+      });
+      const box = new THREE.Box3().setFromObject(inner);
+      const c = box.getCenter(new THREE.Vector3()),
+        sz = box.getSize(new THREE.Vector3());
+      const k = size / Math.max(sz.x, sz.y);
+      inner.children.forEach((m) =>
+        m.position.set(m.position.x - c.x, m.position.y - c.y, m.position.z),
+      );
+      inner.scale.set(k, -k, (depth / Math.max(1, sz.z)) * 6);
+      const outer = new THREE.Group();
+      outer.add(inner);
+      outer.userData.inner = inner;
+      resolve(outer);
+    });
+  });
+}
+
+let G = 0x5cff2e,
   G2 = 0x2bd40f,
   LIME = 0xc6ff3d,
   BG = 0x020a04;
@@ -42,7 +141,7 @@ const M = {
     new THREE.MeshStandardMaterial({ color: c, emissive: c, emissiveIntensity: i, roughness: 0.4 }),
   dark: () =>
     new THREE.MeshPhysicalMaterial({
-      color: 0x0c1f12,
+      color: DARK,
       metalness: 0.7,
       roughness: 0.22,
       clearcoat: 1,
@@ -50,12 +149,12 @@ const M = {
     }),
   green: () =>
     new THREE.MeshPhysicalMaterial({
-      color: 0x3fd61a,
+      color: G,
       metalness: 0.35,
       roughness: 0.25,
       clearcoat: 1,
-      emissive: 0x0f3a05,
-      emissiveIntensity: 0.6,
+      emissive: G2,
+      emissiveIntensity: 0.15,
     }),
   white: () =>
     new THREE.MeshPhysicalMaterial({
@@ -81,7 +180,7 @@ function stars(scene, n = 900, r = 40, seed = 7) {
   g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
   const p = new THREE.Points(
     g,
-    new THREE.PointsMaterial({ color: 0x8dff6a, size: 0.06, transparent: true, opacity: 0.7 }),
+    new THREE.PointsMaterial({ color: LIME, size: 0.06, transparent: true, opacity: 0.7 }),
   );
   scene.add(p);
   return p;
@@ -123,6 +222,61 @@ function gearShape(teeth = 12, r = 1, h = 0.18, inner = 0.35) {
 
 // ---------- scene kinds: (ctx) => update(t) ----------
 const KINDS = {
+  // real brand logos orbiting a hero icon (first svg = hero)
+  logoOrbit({ scene, camera, tiles }) {
+    const [hero, ...sats] = tiles;
+    scene.add(hero);
+    sats.forEach((g) => scene.add(g));
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(3.5, 0.02, 8, 200), M.neon(G, 1.2));
+    ring.rotation.x = Math.PI / 2 - 0.3;
+    scene.add(ring);
+    return (t, p) => {
+      hero.scale.setScalar(0.001 + back(t / 1.0));
+      hero.rotation.y = Math.sin(t * 0.9) * 0.5;
+      hero.position.y = Math.sin(t * 1.3) * 0.1;
+      sats.forEach((g, i) => {
+        const a = (i / sats.length) * Math.PI * 2 + t * 0.55;
+        const k = out((t - 0.4 - i * 0.18) / 0.8);
+        g.position.set(Math.cos(a) * 3.5 * k, Math.sin(a) * 0.8 * k, Math.sin(a) * 3.5 * k * 0.6);
+        g.scale.setScalar(0.001 + k);
+        g.rotation.y = Math.sin(t * 1.6 + i) * 0.35;
+        g.rotation.x = Math.sin(t * 1.2 + i * 2) * 0.12;
+      });
+      ring.scale.setScalar(0.001 + out((t - 0.3) / 1.0));
+      camera.position.set(0, 1.0, 11 - p * 1.0);
+      camera.lookAt(0, 0, 0);
+    };
+  },
+  // real gift box (extruded emoji): drops in, lid pops, confetti
+  giftReal({ scene, camera, svgs }) {
+    const [gift] = svgs;
+    if (gift) scene.add(gift);
+    const R = rng(18),
+      conf = [];
+    const cols = [G, LIME, 0xffc83d, 0xff5a7a, 0xffffff];
+    for (let i = 0; i < 70; i++) {
+      const m = new THREE.Mesh(
+        new THREE.BoxGeometry(0.14, 0.08, 0.02),
+        new THREE.MeshStandardMaterial({ color: cols[i % cols.length], roughness: 0.4 }),
+      );
+      scene.add(m);
+      conf.push([m, (R() - 0.5) * 6, 4 + R() * 4, (R() - 0.5) * 3, R() * 6]);
+    }
+    return (t, p) => {
+      if (gift) {
+        gift.position.y = -6 * (1 - out(t / 0.7)) - 0.4;
+        gift.rotation.y = Math.sin(t * 1.2) * 0.45 + (1 - out(t / 0.9)) * 1.5;
+      }
+      conf.forEach(([m, vx, vy, vz, o]) => {
+        const lt = Math.max(0, t - 1.25);
+        m.visible = t > 1.25;
+        m.position.set(vx * lt, 0.8 + vy * lt - 3.2 * lt * lt, vz * lt);
+        m.rotation.set(lt * 7 + o, lt * 5, o);
+      });
+      camera.position.set(0, 0.8, 12 - p * 1.0);
+      camera.lookAt(0, 0.4, 0);
+    };
+  },
   // 1 neural brain sphere
   neural({ scene, camera }) {
     const grp = new THREE.Group();
@@ -816,7 +970,21 @@ const KINDS = {
   },
 };
 
+let DARK = 0x0c1f12;
+function readTheme() {
+  const cs = getComputedStyle(document.documentElement);
+  const v = (n, d) => cs.getPropertyValue(n).trim() || d;
+  const hex = (n, d) => new THREE.Color(v(n, d)).getHex();
+  G = hex("--3d-a", "#5cff2e");
+  LIME = hex("--3d-b", "#c6ff3d");
+  G2 = new THREE.Color(G).multiplyScalar(0.35).getHex();
+  BG = hex("--3d-bg", "#020a04");
+  DARK = new THREE.Color(BG).getHSL({}).l > 0.5 ? 0x1b2340 : 0x1c2448;
+  return { bloom: Number(v("--3d-bloom", "0.8")), exposure: Number(v("--3d-exposure", "0.8")) };
+}
+
 export async function mount3D({ canvas, w, h, start = 0, kind, opts = {}, bloom = 1.0, fov = 38 }) {
+  const th = readTheme();
   const el = typeof canvas === "string" ? document.getElementById(canvas) : canvas;
   const renderer = new THREE.WebGLRenderer({
     canvas: el,
@@ -826,10 +994,10 @@ export async function mount3D({ canvas, w, h, start = 0, kind, opts = {}, bloom 
   renderer.setPixelRatio(1);
   renderer.setSize(w, h, false);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 0.8;
+  renderer.toneMappingExposure = th.exposure;
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(BG);
-  scene.fog = new THREE.Fog(BG, 14, 40);
+  scene.fog = new THREE.Fog(BG, 30, 80);
   const pm = new THREE.PMREMGenerator(renderer);
   scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
   scene.environmentIntensity = 0.45;
@@ -848,12 +1016,20 @@ export async function mount3D({ canvas, w, h, start = 0, kind, opts = {}, bloom 
   scene.add(new THREE.HemisphereLight(0xcfffc0, 0x020a04, 0.25));
   stars(scene, 700, 40, 5);
   const font = opts.font ? await loadFont(opts.font) : null;
-  const update = KINDS[kind]({ scene, camera, opts, font, THREE });
+  const svgs = opts.svgs
+    ? await Promise.all(
+        opts.svgs.map((u) => (Array.isArray(u) ? loadSvg3d(...u) : loadSvg3d(u, 2))),
+      )
+    : [];
+  const tiles = opts.tiles ? await Promise.all(opts.tiles.map((u) => loadSvgTile(...u))) : [];
+  const update = KINDS[kind]({ scene, camera, opts, font, svgs, tiles, THREE });
   const composer = new EffectComposer(renderer);
   composer.setPixelRatio(1);
   composer.setSize(w, h);
   composer.addPass(new RenderPass(scene, camera));
-  composer.addPass(new UnrealBloomPass(new THREE.Vector2(w / 2, h / 2), 0.55 * bloom, 0.45, 0.72));
+  composer.addPass(
+    new UnrealBloomPass(new THREE.Vector2(w / 2, h / 2), 0.9 * th.bloom * bloom, 0.45, 0.72),
+  );
   composer.addPass(new OutputPass());
   const dur = opts.dur || 6;
   const portrait = h > w;
@@ -870,6 +1046,6 @@ export async function mount3D({ canvas, w, h, start = 0, kind, opts = {}, bloom 
   window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
   update(0, 0);
   composer.render();
-  renderAt(window.__hfThreeTime || 0);
+  renderAt(window.__hfThreeTime ?? LAST_T);
   return renderAt;
 }

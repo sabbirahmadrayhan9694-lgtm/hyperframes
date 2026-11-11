@@ -28,86 +28,86 @@
 .kicker .pill { font-size:26px; }
 .h-big { font-weight:700; font-size:92px; line-height:1.25; letter-spacing:-0.01em; }
 .h-mid { font-weight:700; font-size:64px; line-height:1.3; }
-.sub { font-size:36px; color:var(--mut); font-weight:500; line-height:1.4; }
+.sub { font-size:44px; color:var(--mut); font-weight:500; line-height:1.4; }
 .bug { right:56px; bottom:44px; }
 
 /* A — task cards */
 #A .row { position:absolute; left:0; right:0; top:300px; display:flex; justify-content:center; gap:34px; }
 #A .tcard { width:300px; height:380px; padding:42px 26px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; text-align:center; }
-#A .tcard .ic { width:132px; height:132px; border-radius:36px; display:flex; align-items:center; justify-content:center; color:#04140a; background:var(--grad); box-shadow:0 0 50px rgba(92,255,46,.35); }
-#A .tcard .lb { font-size:36px; font-weight:600; line-height:1.3; }
-#A .tcard .n { font-family:Poppins; font-weight:800; font-size:22px; color:var(--g); letter-spacing:.2em; }
-#A .core { position:absolute; left:50%; top:490px; width:240px; height:240px; margin:-120px 0 0 -120px; border-radius:60px; display:flex; align-items:center; justify-content:center; background:var(--grad); color:#03120a; font-weight:900; font-size:110px; box-shadow:0 0 120px rgba(92,255,46,.6), 0 0 40px rgba(198,255,61,.7); }
-#A .core-ring { position:absolute; left:50%; top:490px; width:420px; height:420px; margin:-210px 0 0 -210px; border-radius:50%; border:2px solid rgba(92,255,46,.5); }
+#A .tcard .ic { width:150px; height:150px; border-radius:40px; display:flex; align-items:center; justify-content:center; background:#fff; box-shadow:0 14px 40px rgba(15,30,80,.14); }
+#A .tcard .lb { font-size:40px; font-weight:600; line-height:1.3; }
+#A .tcard .n { font-family:Poppins; font-weight:800; font-size:26px; color:var(--g); letter-spacing:.2em; }
+#A .core { position:absolute; left:50%; top:490px; width:240px; height:240px; margin:-120px 0 0 -120px; border-radius:60px; display:flex; align-items:center; justify-content:center; background:var(--grad); color:var(--on); font-weight:900; font-size:110px; box-shadow:0 30px 90px rgba(var(--rgb),.45); }
+#A .core-ring { position:absolute; left:50%; top:490px; width:420px; height:420px; margin:-210px 0 0 -210px; border-radius:50%; border:2px solid rgba(var(--rgb),.5); }
 #A .q { position:absolute; left:0; right:0; top:760px; text-align:center; }
 #A .ailine { position:absolute; left:0; right:0; top:800px; text-align:center; font-size:46px; font-weight:600; }
 
 /* B — photo */
 #B .photo { position:absolute; inset:0; background:url(assets/media/sabbir-muse-thumb.png) center/cover no-repeat; }
 #B .shade { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(1,8,3,.92) 100%); }
-#B .cap { position:absolute; left:0; right:0; bottom:90px; text-align:center; }
-#B .cap .l1 { font-size:58px; font-weight:600; color:var(--lime); }
+#B .cap { position:absolute; left:0; right:0; bottom:90px; text-align:center; color:#fff; }
+#B .cap .l1 { font-size:58px; font-weight:600; color:#fff; opacity:.9; }
 #B .cap .l2 { font-size:76px; font-weight:700; }
 
 /* phone */
-.phone { position:absolute; width:452px; height:960px; border-radius:64px; padding:16px; background:linear-gradient(160deg,#1c2a20,#070b08); box-shadow:0 0 0 2px #2c4433, 0 40px 120px rgba(0,0,0,.7), 0 0 90px rgba(92,255,46,.18); }
-.phone .scr { position:relative; width:100%; height:100%; border-radius:50px; overflow:hidden; background:#0d1410; }
+.phone { position:absolute; width:452px; height:960px; border-radius:64px; padding:16px; background:linear-gradient(160deg,#1c2a20,#070b08); box-shadow:0 0 0 2px #2c4433, 0 40px 120px rgba(0,0,0,.7), 0 0 90px rgba(var(--rgb),.18); }
+.phone .scr { color:#fff; position:relative; width:100%; height:100%; border-radius:50px; overflow:hidden; background:#0d1410; }
 .phone .notch { position:absolute; top:14px; left:50%; width:120px; height:30px; margin-left:-60px; border-radius:20px; background:#000; z-index:5; }
 .phone img.shot { position:absolute; left:0; top:0; width:100%; display:block; }
 
 /* C — chat */
-#C .phone { left:1200px; top:60px; }
+#C .phone { left:1010px; top:60px; }
 #C .chat-h { position:absolute; left:0; right:0; top:0; height:150px; padding:58px 24px 0; display:flex; align-items:center; gap:16px; background:#14201a; border-bottom:1px solid #1f3326; }
 #C .av { width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--g); }
 #C .nm { font-weight:700; font-size:28px; }
-#C .st { font-size:20px; color:var(--g); position:relative; height:28px; }
+#C .st { font-size:22px; color:var(--g); position:relative; height:28px; }
 #C .st span { position:absolute; left:0; top:0; white-space:nowrap; }
 #C .msgs { position:absolute; left:0; right:0; top:170px; padding:0 20px; }
 #C .bub { max-width:330px; padding:16px 20px; border-radius:22px; font-size:24px; line-height:1.4; margin-bottom:16px; }
-#C .me { margin-left:auto; background:#1d6b33; border-bottom-right-radius:6px; }
+#C .me { margin-left:auto; background:var(--g2); border-bottom-right-radius:6px; }
 #C .bot { background:#1d2a22; border-bottom-left-radius:6px; display:flex; align-items:center; gap:12px; }
-#C .spin { width:24px; height:24px; border-radius:50%; border:3px solid rgba(92,255,46,.25); border-top-color:var(--g); }
+#C .spin { width:24px; height:24px; border-radius:50%; border:3px solid rgba(var(--rgb),.25); border-top-color:var(--g); }
 #C .input { position:absolute; left:16px; right:16px; bottom:22px; height:76px; border-radius:40px; background:#1a2620; display:flex; align-items:center; padding:0 18px 0 28px; gap:12px; }
 #C .input .tx { flex:1; font-size:24px; white-space:nowrap; overflow:hidden; }
 #C .input .ph { color:#6d8273; }
-#C .send { width:58px; height:58px; border-radius:50%; background:var(--g); color:#04140a; display:flex; align-items:center; justify-content:center; }
+#C .send { width:58px; height:58px; border-radius:50%; background:var(--g); color:var(--on); display:flex; align-items:center; justify-content:center; }
 #C .report { position:absolute; inset:0; background:#0d1410; }
-#C .left { position:absolute; left:150px; top:200px; width:900px; }
+#C .left { position:absolute; left:120px; top:200px; width:820px; }
 #C .steps { margin-top:60px; display:flex; flex-direction:column; gap:26px; }
 #C .step { display:flex; align-items:center; gap:26px; padding:22px 30px; font-size:38px; font-weight:600; }
-#C .step .k { width:66px; height:66px; border-radius:20px; display:flex; align-items:center; justify-content:center; background:rgba(92,255,46,.12); color:var(--g); border:1.5px solid var(--line); flex:none; }
-#C .step .chk { margin-left:auto; color:var(--g); }
+#C .step .k { width:72px; height:72px; border-radius:20px; display:flex; align-items:center; justify-content:center; background:#fff; box-shadow:0 8px 24px rgba(15,30,80,.12); flex:none; }
+#C .step .chk { margin-left:auto; }
 #C .cursor { display:inline-block; width:3px; height:30px; background:var(--g); vertical-align:middle; margin-left:2px; }
 
 /* D — robot + list */
 #D .c3wrap { position:absolute; left:-380px; top:0; width:1920px; height:1080px; -webkit-mask-image:linear-gradient(90deg,#000 62%,transparent 84%); mask-image:linear-gradient(90deg,#000 62%,transparent 84%); }
 #D .list { position:absolute; right:130px; top:150px; width:760px; display:flex; flex-direction:column; gap:22px; }
 #D .li { display:flex; align-items:center; gap:28px; padding:24px 32px; font-size:40px; font-weight:600; }
-#D .li .k { width:76px; height:76px; border-radius:22px; display:flex; align-items:center; justify-content:center; background:var(--grad); color:#04140a; flex:none; }
+#D .li .k { width:76px; height:76px; border-radius:22px; display:flex; align-items:center; justify-content:center; background:#fff; box-shadow:0 8px 24px rgba(15,30,80,.12); flex:none; }
 #D .li .ok { margin-left:auto; color:var(--g); }
-#D .tag { position:absolute; left:140px; bottom:96px; }
+#D .tag { position:absolute; left:140px; bottom:96px; font-size:30px; }
 #E2 .pw { position:absolute; left:0; top:150px; width:1920px; height:1080px; transform:scale(0.78); transform-origin:50% 0; }
 #E2 .ph1 { left:300px; top:40px; }
 #E2 .ph2 { left:734px; top:0px; }
 #E2 .ph3 { left:1168px; top:40px; }
-#E2 .lbl { position:absolute; bottom:-80px; left:0; right:0; text-align:center; font-size:30px; font-weight:600; color:var(--g); }
+#E2 .lbl { position:absolute; bottom:-96px; left:0; right:0; text-align:center; font-size:44px; font-weight:700; color:var(--w); }
 #E2 .ttl { position:absolute; left:0; right:0; top:28px; text-align:center; z-index:3; }
 
 /* E — setup */
-#E .over, #E .ok { position:absolute; left:0; right:0; margin:0 auto; width:fit-content; white-space:nowrap; text-align:center; padding:18px 48px; border-radius:30px; background:rgba(2,10,4,.82); border:1.5px solid var(--line); }
+#E .over, #E .ok { position:absolute; left:0; right:0; margin:0 auto; width:fit-content; white-space:nowrap; text-align:center; padding:18px 48px; border-radius:30px; background:var(--card); border:1.5px solid var(--line); box-shadow:var(--cardshadow); }
 #E .over { top:90px; }
 #E .chips { position:absolute; left:0; right:0; top:330px; display:flex; justify-content:center; gap:30px; }
 #E .chip { padding:20px 30px; display:flex; align-items:center; gap:16px; font-size:32px; font-weight:600; font-family:Poppins; }
-#E .chip .k { color:#ff6b6b; }
+#E .chip .k { display:flex; }
 #E .strike { position:absolute; left:50%; top:378px; width:1100px; height:8px; margin-left:-550px; border-radius:4px; background:#ff4d4d; box-shadow:0 0 30px rgba(255,77,77,.7); transform-origin:left center; }
 #E .ok { bottom:110px; }
 
 /* F — gmail */
 #F .gcard { position:absolute; left:50%; top:200px; width:1000px; margin-left:-500px; padding:56px 64px; }
 #F .grow { display:flex; align-items:center; gap:30px; }
-#F .gic { width:120px; height:120px; border-radius:32px; background:#fff; color:#d93025; display:flex; align-items:center; justify-content:center; flex:none; }
+#F .gic { width:130px; height:130px; border-radius:32px; background:#fff; box-shadow:0 10px 30px rgba(15,30,80,.14); display:flex; align-items:center; justify-content:center; flex:none; }
 #F .acct { font-size:30px; color:var(--mut); font-family:Poppins; margin-top:6px; }
-#F .tg { margin-top:48px; display:flex; align-items:center; justify-content:space-between; padding:30px 36px; border-radius:24px; background:rgba(0,0,0,.35); border:1.5px solid var(--line); font-size:40px; font-weight:600; }
+#F .tg { margin-top:48px; display:flex; align-items:center; justify-content:space-between; padding:30px 36px; border-radius:24px; background:rgba(var(--rgb),.06); border:1.5px solid var(--line); font-size:40px; font-weight:600; }
 #F .sw { width:130px; height:70px; border-radius:40px; background:#2a3a2f; position:relative; }
 #F .knob { position:absolute; top:7px; left:7px; width:56px; height:56px; border-radius:50%; background:#fff; }
 #F .done { margin-top:36px; display:flex; align-items:center; gap:16px; font-size:36px; color:var(--g); font-weight:600; }
@@ -120,20 +120,23 @@
 #G .price .v { font-family:Poppins; font-weight:900; font-size:250px; line-height:1; letter-spacing:-0.02em; }
 #G .price .v .t { font-family:"Hind Siliguri"; font-weight:700; font-size:120px; margin-left:10px; }
 #G .tok { position:absolute; right:150px; top:690px; padding:22px 40px; font-size:52px; font-weight:700; display:flex; align-items:center; gap:18px; }
+#G .giftw { position:absolute; left:290px; top:250px; width:560px; height:600px; }
+#G #gift { position:absolute; left:0; top:0; width:560px; height:560px; filter:drop-shadow(0 30px 40px rgba(15,30,80,.25)); }
+#G .gshadow { position:absolute; left:110px; bottom:0; width:340px; height:40px; border-radius:50%; background:radial-gradient(closest-side, rgba(15,30,80,.25), transparent); }
 #G .c3wrap { position:absolute; left:-420px; top:0; width:1920px; height:1080px; -webkit-mask-image:linear-gradient(90deg,#000 60%,transparent 82%); mask-image:linear-gradient(90deg,#000 60%,transparent 82%); }
 
 /* H — benefits */
-#H .pic { position:absolute; left:110px; top:150px; width:860px; height:484px; border-radius:30px; overflow:hidden; border:2px solid var(--line); box-shadow:0 30px 100px rgba(0,0,0,.6), 0 0 80px rgba(92,255,46,.15); }
+#H .pic { position:absolute; left:110px; top:150px; width:860px; height:484px; border-radius:30px; overflow:hidden; border:2px solid var(--line); box-shadow:0 30px 100px rgba(0,0,0,.6), 0 0 80px rgba(var(--rgb),.15); }
 #H .pic div { position:absolute; inset:0; background:url(assets/media/sabbir-muse-thumb.png) center/cover; }
 #H .bens { position:absolute; left:1040px; top:150px; width:780px; display:flex; flex-direction:column; gap:26px; }
 #H .ben { display:flex; align-items:center; gap:26px; padding:28px 32px; font-size:40px; font-weight:600; }
-#H .ben .k { width:80px; height:80px; border-radius:24px; display:flex; align-items:center; justify-content:center; background:var(--grad); color:#04140a; flex:none; }
+#H .ben .k { width:80px; height:80px; border-radius:24px; display:flex; align-items:center; justify-content:center; background:#fff; box-shadow:0 8px 24px rgba(15,30,80,.12); flex:none; }
 #H .miss { position:absolute; left:0; right:0; bottom:110px; display:flex; justify-content:center; }
-#H .miss div { padding:26px 60px; border-radius:999px; background:var(--grad); color:#04140a; font-size:60px; font-weight:700; box-shadow:0 0 80px rgba(92,255,46,.45); }
+#H .miss div { padding:26px 60px; border-radius:999px; background:var(--grad); color:var(--on); font-size:60px; font-weight:700; box-shadow:0 0 80px rgba(var(--rgb),.45); }
 
 /* I — CTA */
 #I .ttl { position:absolute; left:0; right:0; top:120px; text-align:center; }
-#I .post { position:absolute; left:50%; top:330px; width:1100px; margin-left:-550px; padding:40px 48px; background:#fff; color:#111; border-radius:30px; box-shadow:0 40px 120px rgba(0,0,0,.6), 0 0 90px rgba(92,255,46,.25); }
+#I .post { position:absolute; left:50%; top:330px; width:1100px; margin-left:-550px; padding:40px 48px; background:#fff; color:#111; border-radius:30px; box-shadow:0 40px 120px rgba(0,0,0,.6), 0 0 90px rgba(var(--rgb),.25); }
 #I .cm { display:flex; align-items:center; gap:22px; }
 #I .cm img { width:84px; height:84px; border-radius:50%; object-fit:cover; object-position:70% 30%; }
 #I .field { flex:1; height:84px; border-radius:42px; background:#eef0f3; display:flex; align-items:center; padding:0 34px; font-size:36px; font-family:Poppins; font-weight:700; color:#111; }
@@ -144,21 +147,22 @@
 #I .posted .nm { font-size:24px; font-weight:700; font-family:Poppins; }
 #I .posted .tx { font-size:40px; font-weight:800; font-family:Poppins; color:#0d7a2a; }
 #I .det { position:absolute; left:0; right:0; bottom:120px; text-align:center; }
-#END { background:radial-gradient(80% 80% at 50% 45%, #0a2a10 0%, #020804 70%); }
-#END img { position:absolute; left:50%; top:50%; width:1300px; margin:-433px 0 0 -650px; }
+#END { background:var(--bgroot); }
+#END .lc { position:absolute; left:50%; top:50%; width:1100px; height:733px; margin:-366px 0 0 -550px; border-radius:40px; overflow:hidden; box-shadow:0 40px 120px rgba(0,0,0,.35); }
+#END img { display:block; width:100%; height:100%; object-fit:cover; }
 #END .glowline { position:absolute; left:0; right:0; bottom:120px; text-align:center; font-size:34px; color:var(--mut); }
 <!--body-->
 <div class="bg-fx"><div class="grid-bg"></div><div class="flare f1"></div><div class="flare f2"></div></div>
 
 <!-- A: tasks -->
 <section id="A" class="scene clip" data-start="0" data-duration="10.95" data-track-index="1">
-  <div class="kicker"><div class="pill"><span data-icon="spark" data-size="28"></span>AI AGENT</div></div>
+  <div class="kicker"><div class="pill"><img class="ri" src="assets/icons/emoji/sparkles.svg" alt="" style="width:34px;height:34px" />AI AGENT</div></div>
   <div class="row">
-    <div class="tcard card"><div class="ic" data-icon="pen" data-size="72" data-sw="2"></div><div class="lb bn">ফেসবুক পেজের পোস্ট তৈরি</div><div class="n">01</div></div>
-    <div class="tcard card"><div class="ic" data-icon="rocket" data-size="72" data-sw="2"></div><div class="lb bn">কনটেন্ট পাবলিশ</div><div class="n">02</div></div>
-    <div class="tcard card"><div class="ic" data-icon="video" data-size="72" data-sw="2"></div><div class="lb bn">ইউটিউব চ্যানেল ম্যানেজমেন্ট</div><div class="n">03</div></div>
-    <div class="tcard card"><div class="ic" data-icon="bulb" data-size="72" data-sw="2"></div><div class="lb bn">ভিডিওর আইডিয়া তৈরি</div><div class="n">04</div></div>
-    <div class="tcard card"><div class="ic" data-icon="layers" data-size="72" data-sw="2"></div><div class="lb bn">প্রতিদিনের ডিজিটাল কাজ</div><div class="n">05</div></div>
+    <div class="tcard card"><div class="ic"><img class="ri" src="assets/icons/logos/facebook.svg" alt="" style="width:96px;height:96px" /></div><div class="lb bn">ফেসবুক পেজের পোস্ট তৈরি</div><div class="n">01</div></div>
+    <div class="tcard card"><div class="ic"><img class="ri" src="assets/icons/emoji/rocket.svg" alt="" style="width:96px;height:96px" /></div><div class="lb bn">কনটেন্ট পাবলিশ</div><div class="n">02</div></div>
+    <div class="tcard card"><div class="ic"><img class="ri" src="assets/icons/logos/youtube-icon.svg" alt="" style="width:96px;height:96px" /></div><div class="lb bn">ইউটিউব চ্যানেল ম্যানেজমেন্ট</div><div class="n">03</div></div>
+    <div class="tcard card"><div class="ic"><img class="ri" src="assets/icons/emoji/light-bulb.svg" alt="" style="width:96px;height:96px" /></div><div class="lb bn">ভিডিওর আইডিয়া তৈরি</div><div class="n">04</div></div>
+    <div class="tcard card"><div class="ic"><img class="ri" src="assets/icons/emoji/laptop.svg" alt="" style="width:96px;height:96px" /></div><div class="lb bn">প্রতিদিনের ডিজিটাল কাজ</div><div class="n">05</div></div>
   </div>
   <div class="core-ring"></div>
   <div class="core">AI</div>
@@ -175,12 +179,12 @@
 <!-- C: command -> agent works -->
 <section id="C" class="scene clip" data-start="14.35" data-duration="4.75" data-track-index="1">
   <div class="left">
-    <div class="pill"><span data-icon="bolt" data-size="26"></span>LIVE DEMO</div>
+    <div class="pill"><img class="ri" src="assets/icons/emoji/high-voltage.svg" alt="" style="width:30px;height:30px" />LIVE DEMO</div>
     <div class="h-mid bn" style="margin-top:26px">আপনি শুধু <span class="gtxt">কমান্ড</span> দিন</div>
     <div class="steps">
-      <div class="step card bn"><div class="k" data-icon="chat" data-size="36"></div>কমান্ড টাইপ করুন<div class="chk" data-icon="check" data-size="40" data-sw="3"></div></div>
-      <div class="step card bn"><div class="k" data-icon="robot" data-size="36"></div>AI Agent কাজ শুরু করে<div class="chk" data-icon="check" data-size="40" data-sw="3"></div></div>
-      <div class="step card bn"><div class="k" data-icon="chart" data-size="36"></div>রিপোর্ট চলে আসে<div class="chk" data-icon="check" data-size="40" data-sw="3"></div></div>
+      <div class="step card bn"><div class="k"><img class="ri" src="assets/icons/emoji/keyboard.svg" alt="" style="width:46px;height:46px" /></div>কমান্ড টাইপ করুন<div class="chk"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:44px;height:44px" /></div></div>
+      <div class="step card bn"><div class="k"><img class="ri" src="assets/icons/emoji/robot.svg" alt="" style="width:46px;height:46px" /></div>AI Agent কাজ শুরু করে<div class="chk"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:44px;height:44px" /></div></div>
+      <div class="step card bn"><div class="k"><img class="ri" src="assets/icons/emoji/bar-chart.svg" alt="" style="width:46px;height:46px" /></div>রিপোর্ট চলে আসে<div class="chk"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:44px;height:44px" /></div></div>
     </div>
   </div>
   <div class="phone"><div class="scr">
@@ -199,11 +203,11 @@
 <section id="D" class="scene clip" data-start="19.1" data-duration="6.15" data-track-index="1">
   <div class="c3wrap"><canvas id="c3robot" class="canvas3d"></canvas></div>
   <div class="list">
-    <div class="li card bn"><div class="k" data-icon="users" data-size="40" data-sw="2.2"></div>ফেসবুক অটোমেশন<div class="ok" data-icon="check" data-size="40" data-sw="3"></div></div>
-    <div class="li card bn"><div class="k" data-icon="video" data-size="40" data-sw="2.2"></div>ইউটিউব অটোমেশন<div class="ok" data-icon="check" data-size="40" data-sw="3"></div></div>
-    <div class="li card bn"><div class="k" data-icon="pen" data-size="40" data-sw="2.2"></div>কনটেন্ট তৈরি<div class="ok" data-icon="check" data-size="40" data-sw="3"></div></div>
-    <div class="li card bn"><div class="k" data-icon="globe" data-size="40" data-sw="2.2"></div>সোশ্যাল মিডিয়া ম্যানেজমেন্ট<div class="ok" data-icon="check" data-size="40" data-sw="3"></div></div>
-    <div class="li card bn"><div class="k" data-icon="mail" data-size="40" data-sw="2.2"></div>ইমেইল ম্যানেজমেন্ট<div class="ok" data-icon="check" data-size="40" data-sw="3"></div></div>
+    <div class="li card bn"><div class="k"><img class="ri" src="assets/icons/logos/facebook.svg" alt="" style="width:52px;height:52px" /></div>ফেসবুক অটোমেশন<div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:46px;height:46px" /></div></div>
+    <div class="li card bn"><div class="k"><img class="ri" src="assets/icons/logos/youtube-icon.svg" alt="" style="width:52px;height:52px" /></div>ইউটিউব অটোমেশন<div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:46px;height:46px" /></div></div>
+    <div class="li card bn"><div class="k"><img class="ri" src="assets/icons/emoji/memo.svg" alt="" style="width:52px;height:52px" /></div>কনটেন্ট তৈরি<div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:46px;height:46px" /></div></div>
+    <div class="li card bn"><div class="k"><img class="ri" src="assets/icons/emoji/megaphone.svg" alt="" style="width:52px;height:52px" /></div>সোশ্যাল মিডিয়া ম্যানেজমেন্ট<div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:46px;height:46px" /></div></div>
+    <div class="li card bn"><div class="k"><img class="ri" src="assets/icons/logos/google-gmail.svg" alt="" style="width:52px;height:52px" /></div>ইমেইল ম্যানেজমেন্ট<div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:46px;height:46px" /></div></div>
   </div>
   <div class="tag pill">YOUR 24/7 AI AGENT</div>
 </section>
@@ -223,10 +227,10 @@
   <canvas id="c3order" class="canvas3d"></canvas>
   <div class="over h-mid bn">জটিল সেটআপের <span class="gtxt">চিন্তা নেই</span></div>
   <div class="chips">
-    <div class="chip card"><span class="k" data-icon="code" data-size="34"></span>Server</div>
-    <div class="chip card"><span class="k" data-icon="gear" data-size="34"></span>API Setup</div>
-    <div class="chip card"><span class="k" data-icon="lock" data-size="34"></span>Hosting</div>
-    <div class="chip card"><span class="k" data-icon="flow" data-size="34"></span>Coding</div>
+    <div class="chip card"><span class="k"><img class="ri" src="assets/icons/emoji/desktop-computer.svg" alt="" style="width:40px;height:40px" /></span>Server</div>
+    <div class="chip card"><span class="k"><img class="ri" src="assets/icons/emoji/gear.svg" alt="" style="width:40px;height:40px" /></span>API Setup</div>
+    <div class="chip card"><span class="k"><img class="ri" src="assets/icons/emoji/key.svg" alt="" style="width:40px;height:40px" /></span>Hosting</div>
+    <div class="chip card"><span class="k"><img class="ri" src="assets/icons/emoji/hammer-and-wrench.svg" alt="" style="width:40px;height:40px" /></span>Coding</div>
   </div>
   <div class="strike"></div>
   <div class="ok h-mid bn glow"><span class="gtxt">সহজ।</span> ঝামেলাহীন। রেডি।</div>
@@ -236,34 +240,35 @@
 <section id="F" class="scene clip" data-start="35.15" data-duration="4.4" data-track-index="1">
   <div class="ttl h-mid bn">আপনার নিজের <span class="gtxt">পার্সোনাল Gmail</span>-এই</div>
   <div class="gcard card">
-    <div class="grow"><div class="gic" data-icon="mail" data-size="70" data-sw="2"></div><div><div class="h-mid" style="font-size:54px">Gmail</div><div class="acct">yourname@gmail.com</div></div></div>
+    <div class="grow"><div class="gic"><img class="ri" src="assets/icons/logos/google-gmail.svg" alt="" style="width:80px;height:80px" /></div><div><div class="h-mid" style="font-size:54px">Gmail</div><div class="acct">yourname@gmail.com</div></div></div>
     <div class="tg"><span>AI Agent</span><div class="sw"><div class="knob"></div></div></div>
-    <div class="done bn"><span data-icon="check" data-size="40" data-sw="3"></span>শক্তিশালী AI Agent চালু!</div>
+    <div class="done bn"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:46px;height:46px" />শক্তিশালী AI Agent চালু!</div>
   </div>
 </section>
 
 <!-- G: price -->
 <section id="G" class="scene clip" data-start="39.55" data-duration="5.1" data-track-index="1">
   <div class="c3wrap"><canvas id="c3gift" class="canvas3d"></canvas></div>
+  <div class="giftw"><div class="gshadow"></div><img id="gift" src="assets/icons/emoji/wrapped-gift.svg" alt="" /></div>
   <div class="q"><div class="h-big bn glow" id="think">ভাবতে পারছেন?</div></div>
   <div class="price bn"><div class="m">এতসব সুবিধা — মাত্র</div><div class="v gtxt glow"><span id="pr">০</span><span class="t">টাকা</span></div></div>
-  <div class="tok card bn"><span data-icon="spark" data-size="48" data-color="#c6ff3d"></span>সাথে <span class="gtxt" id="tk">১ বিলিয়ন</span> টোকেন!</div>
+  <div class="tok card bn"><img class="ri" src="assets/icons/emoji/sparkles.svg" alt="" style="width:56px;height:56px" />সাথে <span class="gtxt" id="tk">১ বিলিয়ন</span> টোকেন!</div>
 </section>
 
 <!-- H: benefits -->
 <section id="H" class="scene clip" data-start="44.65" data-duration="10.9" data-track-index="1">
   <div class="pic"><div></div></div>
   <div class="bens">
-    <div class="ben card bn"><div class="k" data-icon="check" data-size="44" data-sw="2.6"></div>নিজের কাজ সহজ করুন</div>
-    <div class="ben card bn"><div class="k" data-icon="clock" data-size="44" data-sw="2.2"></div>ব্যবসার সময় বাঁচান</div>
-    <div class="ben card bn"><div class="k" data-icon="bolt" data-size="44" data-sw="2.2"></div>ডিজিটাল কাজ অটোমেট করুন</div>
+    <div class="ben card bn"><div class="k"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:56px;height:56px" /></div>নিজের কাজ সহজ করুন</div>
+    <div class="ben card bn"><div class="k"><img class="ri" src="assets/icons/emoji/stopwatch.svg" alt="" style="width:56px;height:56px" /></div>ব্যবসার সময় বাঁচান</div>
+    <div class="ben card bn"><div class="k"><img class="ri" src="assets/icons/emoji/high-voltage.svg" alt="" style="width:56px;height:56px" /></div>ডিজিটাল কাজ অটোমেট করুন</div>
   </div>
   <div class="miss bn"><div>এই সুযোগ মিস করবেন না!</div></div>
 </section>
 
 <!-- I: CTA -->
 <section id="I" class="scene clip" data-start="55.55" data-duration="3.4" data-track-index="1">
-  <div class="ttl h-big bn">এখনই কমেন্ট করুন</div>
+  <div class="ttl h-big bn" style="display:flex;align-items:center;justify-content:center;gap:28px"><img class="ri" src="assets/icons/logos/facebook.svg" alt="" style="width:96px;height:96px" />এখনই কমেন্ট করুন</div>
   <div class="post">
     <div class="cm"><img src="assets/media/sabbir-muse-thumb.png" alt="" /><div class="field"><span class="ph" id="cph">Write a comment...</span><span id="ctyped"></span></div><div class="sendb" data-icon="play" data-size="34" data-sw="2.4"></div></div>
     <div class="posted"><img src="assets/media/sabbir-muse-thumb.png" alt="" style="width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:70% 30%" /><div class="b"><div class="nm">You</div><div class="tx">AI AGENT</div></div></div>
@@ -272,7 +277,7 @@
 </section>
 
 <section id="END" class="scene clip" data-start="58.95" data-duration="2.05" data-track-index="2">
-  <img class="logo-mark" src="assets/logo-full.png" alt="Sabbir Rayhan Academy" />
+  <div class="lc"><img src="assets/logo-full.png" alt="Sabbir Rayhan Academy" /></div>
 </section>
 
 <div id="bug" class="brandbug bug clip" data-start="0" data-duration="58.95" data-track-index="3"><img src="assets/logo-mark.png" alt="" /><span>Sabbir Rayhan Academy</span></div>
@@ -289,8 +294,8 @@ const cards = $$("#A .tcard"), cardAt = [0.25, 1.9, 3.15, 4.85, 6.35];
 cards.forEach((c, i) => {
   tl.fromTo(c, { opacity: 0, y: 120, rotationX: -50, transformPerspective: 1000 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.7, ease: "back.out(1.6)" }, cardAt[i]);
   tl.fromTo($(".ic", c), { scale: 0.3, rotation: -25 }, { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(2)" }, cardAt[i] + 0.12);
-  tl.to(c, { borderColor: "rgba(92,255,46,.9)", boxShadow: "0 0 60px rgba(92,255,46,.35)", duration: 0.3 }, cardAt[i] + 0.1);
-  tl.to(c, { borderColor: "rgba(92,255,46,.28)", boxShadow: "0 30px 80px rgba(0,0,0,.55)", duration: 0.6 }, cardAt[i] + 1.1);
+  tl.to(c, { borderColor: `rgba(${ACC_RGB},.9)`, boxShadow: `0 0 60px rgba(${ACC_RGB},.35)`, duration: 0.3 }, cardAt[i] + 0.1);
+  tl.to(c, { borderColor: `rgba(${ACC_RGB},.28)`, boxShadow: CV("--cardshadow"), duration: 0.6 }, cardAt[i] + 1.1);
 });
 // converge into AI core
 cards.forEach((c, i) => {
@@ -319,7 +324,7 @@ const steps = $$("#C .step");
 [C0 + 0.25, C0 + 1.85, C0 + 3.4].forEach((t, i) => {
   tl.fromTo(steps[i], { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, t);
   tl.fromTo($(".chk", steps[i]), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(3)" }, t + (i === 0 ? 1.3 : 1.0));
-  tl.to(steps[i], { borderColor: "rgba(92,255,46,.9)", duration: 0.25 }, t + 0.1);
+  tl.to(steps[i], { borderColor: `rgba(${ACC_RGB},.9)`, duration: 0.25 }, t + 0.1);
 });
 gsap.set(["#cmdb", "#botb", "#st2", "#st3"], { opacity: 0 });
 tl.set("#ph", { opacity: 0 }, C0 + 0.25);
@@ -371,8 +376,8 @@ const F0 = 35.15;
 tl.fromTo("#F .ttl", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.5 }, F0);
 tl.fromTo("#F .gcard", { opacity: 0, y: 120, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "power3.out" }, F0 + 0.2);
 tl.to("#F .knob", { x: 60, duration: 0.3, ease: "power2.inOut" }, F0 + 2.05);
-tl.to("#F .sw", { backgroundColor: "#5cff2e", boxShadow: "0 0 40px rgba(92,255,46,.7)", duration: 0.3 }, F0 + 2.05);
-tl.to("#F .gcard", { borderColor: "rgba(92,255,46,.9)", boxShadow: "0 0 90px rgba(92,255,46,.35)", duration: 0.4 }, F0 + 2.1);
+tl.to("#F .sw", { backgroundColor: CV("--g"), boxShadow: `0 0 40px rgba(${ACC_RGB},.7)`, duration: 0.3 }, F0 + 2.05);
+tl.to("#F .gcard", { borderColor: `rgba(${ACC_RGB},.9)`, boxShadow: `0 0 90px rgba(${ACC_RGB},.35)`, duration: 0.4 }, F0 + 2.1);
 tl.fromTo("#F .done", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, F0 + 2.4);
 
 // ---- G ----
@@ -381,6 +386,11 @@ tl.fromTo("#think", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration
 tl.to("#think", { opacity: 0, scale: 0.8, duration: 0.3 }, G0 + 0.7);
 gsap.set("#G .c3wrap", { opacity: 0 });
 tl.to("#G .c3wrap", { opacity: 1, duration: 0.4 }, G0 + 0.7);
+tl.fromTo("#gift", { y: -700, rotation: -12, scale: 0.8 }, { y: 0, rotation: 0, scale: 1, duration: 0.6, ease: "bounce.out" }, G0 + 0.75);
+tl.fromTo("#G .gshadow", { opacity: 0, scaleX: 0.3 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "bounce.out" }, G0 + 0.75);
+tl.to("#gift", { rotation: 6, duration: 0.07, repeat: 5, yoyo: true, ease: "sine.inOut" }, G0 + 1.4);
+tl.to("#gift", { scale: 1.12, y: -30, duration: 0.25, ease: "back.out(3)" }, G0 + 1.85);
+tl.to("#gift", { scale: 1, y: 0, rotationY: 0, duration: 2.6, ease: "sine.inOut" }, G0 + 2.1);
 tl.fromTo("#G .price .m", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45 }, G0 + 1.0);
 tl.fromTo("#G .price .v", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, G0 + 1.7);
 countUp($("#pr"), 249, G0 + 1.7, 0.8, (v) => BN(Math.round(v)));
@@ -413,10 +423,12 @@ tl.fromTo("#I .posted", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4
 tl.fromTo("#I .det", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, I0 + 2.1);
 
 // ---- END ----
-tl.fromTo("#END img", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, 59.0);
+tl.fromTo("#END .lc", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }, 59.0);
 tl.fromTo("#END", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 58.95);
 
 <!--module-->
-mount3D({ canvas: "c3robot", w: W, h: H, start: 19.1, kind: "robot", opts: { dur: 6.15 } });
+window.__hf = window.__hf || {};
+window.__hf.buildReady = window.__hf.buildReady || {};
+window.__hf.buildReady["logos3d"] = mount3D({ canvas: "c3robot", w: W, h: H, start: 19.1, kind: "logoOrbit", opts: { dur: 6.15, tiles: [["assets/icons/emoji/robot.svg", 3.2, false], ["assets/icons/logos/facebook.svg", 1.25], ["assets/icons/logos/youtube-icon.svg", 1.25], ["assets/icons/logos/google-gmail.svg", 1.25], ["assets/icons/logos/whatsapp-icon.svg", 1.25], ["assets/icons/logos/instagram-icon.svg", 1.25], ["assets/icons/logos/messenger.svg", 1.25]] } });
 mount3D({ canvas: "c3order", w: W, h: H, start: 28.95, kind: "order", opts: { dur: 6.2 }, bloom: 0.8 });
-mount3D({ canvas: "c3gift", w: W, h: H, start: 39.55, kind: "gift", opts: { dur: 5.1 } });
+window.__hf.buildReady["gift3d"] = mount3D({ canvas: "c3gift", w: W, h: H, start: 39.55, kind: "giftReal", opts: { dur: 5.1 } });
