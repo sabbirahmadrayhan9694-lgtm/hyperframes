@@ -222,6 +222,77 @@ function gearShape(teeth = 12, r = 1, h = 0.18, inner = 0.35) {
 
 // ---------- scene kinds: (ctx) => update(t) ----------
 const KINDS = {
+  // many separate tool logos (scattered) fly into one AI hub tile
+  logoMerge({ scene, camera, tiles }) {
+    const [hub, ...sats] = tiles;
+    scene.add(hub);
+    const R = rng(21);
+    const starts = sats.map((g, i) => {
+      scene.add(g);
+      const a = (i / sats.length) * Math.PI * 2 + 0.4;
+      const xs = camera.aspect < 1 ? 0.45 : 1;
+      return new THREE.Vector3(
+        Math.cos(a) * (2.6 + R() * 0.8) * xs,
+        Math.sin(a) * (3.6 + R() * 1.2) * (camera.aspect < 1 ? 0.7 : 1) -
+          (camera.aspect < 1 ? 0.6 : 0),
+        (R() - 0.5) * 2,
+      );
+    });
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(2.0, 0.025, 8, 200), M.neon(G, 1.2));
+    scene.add(ring);
+    return (t, p) => {
+      const merge = ease((t - 3.2) / 1.2);
+      sats.forEach((g, i) => {
+        const k = back((t - i * 0.15) / 0.7);
+        const s0 = starts[i];
+        g.position.set(
+          s0.x * (1 - merge),
+          s0.y * (1 - merge) + Math.sin(t * 1.5 + i) * 0.12 * (1 - merge),
+          s0.z * (1 - merge),
+        );
+        g.scale.setScalar(0.001 + k * (1 - merge * 0.95));
+        g.rotation.set(Math.sin(t + i) * 0.25, Math.sin(t * 1.3 + i) * 0.4 + merge * 3, 0);
+      });
+      hub.scale.setScalar(0.001 + back((t - 3.6) / 0.7) * (1 + 0.04 * Math.sin(t * 6)));
+      hub.rotation.y = Math.sin(t * 1.4) * 0.3;
+      ring.scale.setScalar(0.001 + out((t - 3.9) / 0.8) * 1.2);
+      ring.rotation.set(Math.PI / 2 - 0.35, 0, t * 0.8);
+      camera.position.set(0, 0, 12 - p * 1.0);
+      camera.lookAt(0, 0, 0);
+    };
+  },
+  // big number/price over a flowing particle field (no props)
+  field({ scene, camera }) {
+    const W = 70,
+      H = 70,
+      n = W * H,
+      pos = new Float32Array(n * 3);
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+    const pts = new THREE.Points(
+      g,
+      new THREE.PointsMaterial({ color: G, size: 0.085, transparent: true, opacity: 0.9 }),
+    );
+    scene.add(pts);
+    camera.position.set(0, 4.5, 9);
+    camera.lookAt(0, 0, 0);
+    return (t, p) => {
+      for (let i = 0; i < W; i++)
+        for (let j = 0; j < H; j++) {
+          const k = (i * H + j) * 3,
+            x = (i - W / 2) * 0.22,
+            z = (j - H / 2) * 0.22,
+            d = Math.hypot(x, z);
+          pos[k] = x;
+          pos[k + 1] =
+            Math.sin(d * 1.1 - t * 2.6) * 0.55 * Math.exp(-d * 0.06) * out(t / 1.0) - 1.6;
+          pos[k + 2] = z;
+        }
+      g.attributes.position.needsUpdate = true;
+      camera.position.set(Math.sin(t * 0.3) * 2, 4.5 - p, 9 - p * 1.5);
+      camera.lookAt(0, -1, 0);
+    };
+  },
   // real brand logos orbiting a hero icon (first svg = hero)
   logoOrbit({ scene, camera, tiles }) {
     const [hero, ...sats] = tiles;
@@ -980,7 +1051,11 @@ function readTheme() {
   G2 = new THREE.Color(G).multiplyScalar(0.35).getHex();
   BG = hex("--3d-bg", "#020a04");
   DARK = new THREE.Color(BG).getHSL({}).l > 0.5 ? 0x1b2340 : 0x1c2448;
-  return { bloom: Number(v("--3d-bloom", "0.8")), exposure: Number(v("--3d-exposure", "0.8")) };
+  return {
+    bloom: Number(v("--3d-bloom", "0.8")),
+    exposure: Number(v("--3d-exposure", "0.8")),
+    light: new THREE.Color(BG).getHSL({}).l > 0.5,
+  };
 }
 
 export async function mount3D({ canvas, w, h, start = 0, kind, opts = {}, bloom = 1.0, fov = 38 }) {
@@ -993,7 +1068,7 @@ export async function mount3D({ canvas, w, h, start = 0, kind, opts = {}, bloom 
   });
   renderer.setPixelRatio(1);
   renderer.setSize(w, h, false);
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMapping = th.light ? THREE.NeutralToneMapping : THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = th.exposure;
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(BG);
