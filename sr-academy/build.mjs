@@ -91,7 +91,7 @@ ${mod ? `    <script type="module">\nimport { mount3D } from "./assets/sr3d.js";
   fs.mkdirSync(path.join(a, "sfx"), { recursive: true });
   for (const [name] of meta.sfx || [])
     fs.copyFileSync(path.join(V, "sfx", name + ".mp3"), path.join(a, "sfx", name + ".mp3"));
-  for (const f of ["sr3d.js", "logo-mark.png", "logo-mark-t.png", "logo-full.png"])
+  for (const f of ["sr3d.js", "dhaka.js", "logo-mark.png", "logo-mark-t.png", "logo-full.png"])
     fs.copyFileSync(path.join(V, f), path.join(a, f));
   fs.mkdirSync(path.join(a, "media"), { recursive: true });
   for (const f of [...(meta.media || []), ...(meta.vo ? [meta.vo] : [])])
