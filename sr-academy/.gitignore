@@ -11,3 +11,4 @@ _vendor/logo-*.png
 _vendor/icons/
 theme-samples/
 v*/snaps/
+thumbs/out/
