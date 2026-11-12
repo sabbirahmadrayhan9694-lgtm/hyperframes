@@ -90,10 +90,10 @@ function landscape(s) {
 function portrait(s) {
   return `<div class="stage">
   <div class="bgimg" style="background-image:url(${u("media/" + s.bg)})"></div><div class="tint"></div><div class="rays"></div>
-  <div class="brush yellow" style="left:60px;top:150px;width:960px;height:170px"><div class="bg"></div><div class="tx" style="font-size:88px">${s.h1}</div></div>
+  <div class="brush yellow" style="left:50px;top:160px;width:980px;height:160px"><div class="bg"></div><div class="tx" style="font-size:${s.h1size || 88}px">${s.h1}</div></div>
   <div style="position:absolute;left:0;right:0;top:340px;text-align:center"><span class="gold" style="font-size:180px">${s.h2}</span></div>
   <img class="person ${s.soft ? "soft" : ""}" src="${u("media/" + s.person)}" style="${s.personStyle}" />
-  <div class="metab" style="right:40px;top:560px"><img src="${u("icons/logos/meta-icon.svg")}" style="width:130px" /><div style="font-size:34px;margin-top:-4px">Meta</div></div>
+  <div class="metab" style="right:40px;top:30px;flex-direction:row;gap:12px;padding:10px 22px"><img src="${u("icons/logos/meta-icon.svg")}" style="width:90px" /><div style="font-size:36px">Meta</div></div>
   <div class="tag" style="left:70px;top:1080px;width:940px;height:300px">
     <div class="shape"></div><div class="stitch"></div><div class="hole"></div>
     <div style="position:relative;display:flex;align-items:center;gap:22px;margin-left:40px">
@@ -114,6 +114,10 @@ const SPECS = [
   {
     id: "v01-thumb", W: 1920, H: 1080, kind: landscape, bg: "sabbir-muse-thumb.png", person: "cut-sabbir-muse-c.png",
     personStyle: "left:-250px;height:900px;bottom:0", x: 1060, w: 820, h1: "নিজে আর কাজ করতে হবে না!", h1size: 62,
+  },
+  {
+    id: "v01-cover", W: 1080, H: 1920, kind: portrait, bg: "sabbir-muse-thumb.png", person: "cut-sabbir-muse-c.png",
+    soft: true, personStyle: "left:20px;width:1040px;height:auto;top:470px;bottom:auto", h1: "নিজে আর কাজ করতে হবে না!", h1size: 70, h2: "AI এজেন্ট",
   },
   {
     id: "v02-cover", W: 1080, H: 1920, kind: portrait, bg: "sabbir-muse-thumb.png", person: "cut-sabbir-pointing-c.png",
