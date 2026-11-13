@@ -1,0 +1,337 @@
+<!--meta {
+  "w": 1080, "h": 1920, "dur": 103, "theme": "clean", "title": "আল খিদমাহ প্রতিনিধিদের জন্য AI Agent",
+  "vo": "vo-alkhidmah.mp3", "voDur": 100.85,
+  "media": ["cut-kawsar.png", "alkhidmah-logo.jpg"],
+  "sfx": [
+    ["whoosh-cinematic", 0.0, 0.3, 2.0], ["pop", 0.3, 0.45], ["pop", 2.2, 0.45], ["pop", 4.1, 0.45],
+    ["whoosh", 5.6, 0.4], ["notification", 5.85, 0.45, 1.4], ["ping", 7.3, 0.35], ["ping", 8.4, 0.35], ["key-press", 9.8, 0.3], ["error", 10.6, 0.2],
+    ["whoosh", 12.45, 0.45], ["pop", 12.7, 0.4], ["pop", 14.55, 0.4], ["pop", 16.5, 0.4], ["pop", 17.85, 0.4], ["glitch-2", 19.4, 0.25, 1.6], ["impact-bass-2", 21.5, 0.4],
+    ["riser", 21.6, 0.25, 1.3, 8.7], ["whoosh-cinematic", 22.75, 0.35, 2.4], ["impact-bass-1", 23.0, 0.55], ["sparkle", 25.2, 0.4],
+    ["whoosh", 27.7, 0.45], ["chime", 27.95, 0.35], ["whoosh-short", 30.1, 0.4], ["pop", 32.85, 0.35], ["ping", 37.35, 0.4],
+    ["whoosh", 38.7, 0.45], ["pop", 41.9, 0.45], ["pop", 43.2, 0.45], ["pop", 44.8, 0.45], ["pop", 45.6, 0.45], ["sparkle", 46.2, 0.35],
+    ["whoosh", 47.1, 0.45], ["pop", 47.3, 0.4], ["pop", 50.7, 0.4], ["pop", 52.3, 0.4], ["pop", 54.7, 0.4], ["pop", 56.3, 0.4],
+    ["whoosh-cinematic", 58.45, 0.3, 2.2], ["chime", 58.7, 0.3], ["notification", 63.7, 0.3, 1.0], ["ping", 65.8, 0.4], ["ping", 67.2, 0.4], ["ping", 68.6, 0.4],
+    ["whoosh", 70.4, 0.45], ["impact-bass-2", 70.6, 0.4], ["pop", 72.1, 0.4], ["pop", 75.5, 0.4], ["error", 78.4, 0.2],
+    ["riser", 77.4, 0.25, 1.9, 8.1], ["whoosh-cinematic", 79.3, 0.35, 2.2], ["sparkle", 79.5, 0.45], ["pop", 82.1, 0.4], ["impact-bass-1", 84.2, 0.6],
+    ["whoosh", 86.0, 0.45], ["click", 87.6, 0.55],
+    ["whoosh", 89.95, 0.45], ["pop", 90.2, 0.4], ["pop", 91.6, 0.4], ["pop", 92.7, 0.4],
+    ["whoosh-cinematic", 95.5, 0.3, 2.2], ["chime", 95.7, 0.35], ["chime", 99.0, 0.3], ["whoosh", 100.6, 0.35]
+  ]
+} -->
+<!--style-->
+.bg-fx { position:absolute; inset:0; }
+.flare.f1 { width:1200px; height:1200px; left:-500px; top:-300px; }
+.flare.f2 { width:1000px; height:1000px; right:-400px; bottom:-300px; }
+.mid { position:absolute; left:60px; right:60px; }
+.hd { font-weight:700; font-size:84px; line-height:1.28; text-align:center; }
+.hd2 { font-weight:700; font-size:66px; line-height:1.3; text-align:center; }
+.ri { display:block; }
+.tile { width:200px; height:200px; border-radius:50px; background:#fff; box-shadow:var(--cardshadow); display:flex; align-items:center; justify-content:center; }
+.cap { margin-top:18px; font-size:44px; font-weight:700; text-align:center; }
+.row3 { display:flex; justify-content:center; gap:40px; }
+.row3 > div { display:flex; flex-direction:column; align-items:center; }
+.bugk { position:absolute; left:0; right:0; top:60px; margin:0 auto; width:fit-content; display:flex; align-items:center; gap:14px; padding:8px 22px 8px 8px; border-radius:22px; background:rgba(255,255,255,.95); box-shadow:var(--cardshadow); font-size:30px; font-weight:700; color:#1b5e20; }
+.bugk img { width:64px; height:64px; border-radius:14px; }
+/* S1 */
+#S1 .row3 { position:absolute; left:0; right:0; top:380px; }
+#S1 .phone { position:absolute; left:250px; top:760px; width:580px; height:820px; border-radius:64px; background:linear-gradient(160deg,#20263a,#0b0e16); padding:18px; box-shadow:0 30px 90px rgba(15,30,80,.35); }
+#S1 .scr { position:relative; width:100%; height:100%; border-radius:50px; overflow:hidden; background:#f4f6fb; }
+#S1 .notif { position:absolute; left:18px; right:18px; display:flex; gap:16px; align-items:center; padding:18px; border-radius:26px; background:#fff; box-shadow:0 10px 30px rgba(15,30,80,.15); }
+#S1 .notif .t { font-size:28px; font-weight:700; color:#0b1530; }
+#S1 .notif .m { font-size:30px; color:#4a5878; }
+#S1 .badge { position:absolute; right:-30px; top:-30px; width:96px; height:96px; border-radius:50%; background:#e03131; color:#fff; font-family:Poppins; font-weight:800; font-size:52px; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 30px rgba(224,49,49,.5); z-index:3; }
+#S1 .q { top:1620px; }
+/* S2 */
+#S2 .t { top:220px; }
+#S2 .grid { position:absolute; left:80px; right:80px; top:480px; display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+#S2 .tc { height:330px; border-radius:40px; background:#fff; box-shadow:var(--cardshadow); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; font-size:44px; font-weight:700; text-align:center; padding:20px; }
+#S2 .tc .ic { display:flex; gap:14px; }
+#S2 .hard { position:absolute; left:0; right:0; top:1300px; display:flex; flex-direction:column; align-items:center; gap:10px; }
+/* S3 */
+#S3 .t { top:240px; }
+#S3 .t2 { bottom:360px; }
+/* S4 */
+#S4 .panel { position:absolute; left:110px; right:110px; top:330px; height:960px; border-radius:60px; overflow:hidden; background:linear-gradient(160deg,#2a64d8,#103a8c); box-shadow:0 40px 100px rgba(15,30,80,.3); }
+#S4 .panel img { position:absolute; left:50%; bottom:0; width:860px; margin-left:-430px; }
+#S4 .salam { top:170px; font-size:64px; }
+#S4 .nameplate { position:absolute; left:60px; right:60px; top:1220px; padding:34px 40px; border-radius:36px; background:#fff; box-shadow:var(--cardshadow); }
+#S4 .nameplate .n { font-size:56px; font-weight:700; line-height:1.3; }
+#S4 .nameplate .r { font-size:40px; color:var(--mut); margin-top:8px; }
+#S4 .org { display:flex; align-items:center; gap:18px; margin-top:18px; padding-top:18px; border-top:2px solid var(--line); font-size:44px; font-weight:700; color:#2e7d32; }
+#S4 .org img { width:90px; height:90px; border-radius:18px; }
+/* S5 */
+#S5 .t { top:230px; }
+#S5 .hs { position:absolute; left:0; right:0; top:420px; display:flex; justify-content:center; }
+#S5 .grid { position:absolute; left:110px; right:110px; top:700px; display:grid; grid-template-columns:1fr 1fr; gap:44px; }
+#S5 .grid > div { display:flex; flex-direction:column; align-items:center; }
+#S5 .tile { width:300px; height:300px; border-radius:70px; }
+#S5 .auto { position:absolute; left:0; right:0; top:1560px; display:flex; justify-content:center; }
+#S5 .auto .pill { font-size:52px; padding:18px 44px; gap:18px; }
+/* S6 */
+#S6 .t { top:300px; }
+#S6 .list { position:absolute; left:70px; right:70px; top:520px; display:flex; flex-direction:column; gap:26px; }
+#S6 .li { display:flex; align-items:center; gap:28px; padding:26px 32px; border-radius:34px; background:#fff; box-shadow:var(--cardshadow); font-size:48px; font-weight:700; }
+#S6 .li .k { width:120px; height:120px; border-radius:30px; background:rgba(var(--rgb),.08); display:flex; align-items:center; justify-content:center; flex:none; }
+#S6 .li .ok { margin-left:auto; }
+/* S7 */
+#S7 .t { top:200px; }
+#S7 .busy { position:absolute; left:60px; top:470px; width:440px; height:620px; border-radius:44px; background:#fff; box-shadow:var(--cardshadow); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; }
+#S7 .busy .lb { font-size:44px; font-weight:700; text-align:center; }
+#S7 .arrow { position:absolute; left:500px; top:720px; width:80px; height:80px; }
+#S7 .ph { position:absolute; left:580px; top:430px; width:440px; height:700px; border-radius:56px; background:linear-gradient(160deg,#20263a,#0b0e16); padding:14px; box-shadow:0 30px 80px rgba(15,30,80,.3); }
+#S7 .ph .scr { position:relative; width:100%; height:100%; border-radius:44px; overflow:hidden; background:#f4f6fb; padding:70px 18px 18px; display:flex; flex-direction:column; gap:16px; }
+#S7 .msg { display:flex; flex-direction:column; gap:8px; }
+#S7 .in { align-self:flex-start; background:#fff; border-radius:22px; padding:12px 18px; font-size:26px; box-shadow:0 4px 12px rgba(15,30,80,.08); }
+#S7 .out { align-self:flex-end; background:var(--g); color:#fff; border-radius:22px; padding:12px 18px; font-size:26px; display:flex; align-items:center; gap:8px; }
+#S7 .run { position:absolute; left:60px; right:60px; top:1200px; display:flex; justify-content:center; }
+#S7 .run .pill { font-size:50px; padding:18px 40px; gap:16px; background:rgba(47,158,68,.12); color:#2f9e44; border-color:rgba(47,158,68,.35); }
+/* S8 */
+#S8 .t { top:330px; display:flex; flex-direction:column; align-items:center; gap:20px; }
+#S8 .vals { position:absolute; left:80px; right:80px; top:880px; display:flex; flex-direction:column; gap:34px; }
+#S8 .val { position:relative; display:flex; align-items:center; gap:26px; padding:34px 36px; border-radius:36px; background:#fff; box-shadow:var(--cardshadow); }
+#S8 .val .k { font-size:44px; font-weight:700; }
+#S8 .val .v { margin-left:auto; font-family:Poppins, "Hind Siliguri"; font-size:64px; font-weight:800; color:#495057; white-space:nowrap; }
+#S8 .val .x { position:absolute; right:30px; top:50%; width:330px; height:8px; border-radius:4px; background:#e03131; transform-origin:right center; }
+/* S9 */
+#S9 .t { top:220px; }
+#S9 .pack { position:absolute; left:60px; right:60px; top:560px; display:flex; justify-content:center; align-items:center; gap:22px; font-size:50px; font-weight:800; text-align:center; }
+#S9 .price { position:absolute; left:0; right:0; top:840px; display:flex; flex-direction:column; align-items:center; }
+#S9 .price .m { font-size:72px; font-weight:700; }
+#S9 .price .v { font-family:Poppins; font-weight:900; font-size:330px; line-height:1; }
+#S9 .price .v .tk { font-family:"Hind Siliguri"; font-size:140px; margin-left:16px; }
+#S9 .cta { position:absolute; left:0; right:0; top:1470px; display:flex; justify-content:center; }
+#S9 .cta div { display:flex; align-items:center; gap:18px; padding:26px 56px; border-radius:999px; background:var(--grad); color:#fff; font-size:60px; font-weight:700; box-shadow:0 20px 60px rgba(var(--rgb),.4); }
+/* S10 */
+#S10 .list { position:absolute; left:80px; right:80px; top:620px; display:flex; flex-direction:column; gap:40px; }
+#S10 .b { display:flex; align-items:center; gap:30px; padding:36px 40px; border-radius:40px; background:#fff; box-shadow:var(--cardshadow); font-size:58px; font-weight:700; }
+/* S11 */
+#S11 .dua { top:220px; }
+#S11 .hands { position:absolute; left:0; right:0; margin:0 auto; top:560px; width:300px; height:300px; }
+#S11 .p { position:absolute; left:240px; right:240px; top:930px; height:640px; border-radius:50px; overflow:hidden; background:linear-gradient(160deg,#2a64d8,#103a8c); }
+#S11 .p img { position:absolute; left:50%; bottom:0; width:600px; margin-left:-300px; }
+#S11 .salam { top:1640px; font-size:58px; }
+#END { background:var(--bgroot); }
+#END .lg { position:absolute; left:0; right:0; margin:0 auto; top:520px; width:620px; height:620px; border-radius:60px; background:#fff; box-shadow:var(--cardshadow); display:flex; align-items:center; justify-content:center; }
+#END .lg img { width:560px; height:560px; }
+#END .tg { position:absolute; left:60px; right:60px; top:1220px; text-align:center; font-size:56px; font-weight:700; }
+<!--body-->
+<div class="bg-fx"><div class="grid-bg"></div><div class="flare f1"></div><div class="flare f2"></div></div>
+
+<section id="S1" class="scene clip" data-start="0" data-duration="12.45" data-track-index="1">
+  <div class="row3 bn">
+    <div><div class="tile"><img class="ri" src="assets/icons/emoji/mosque.svg" alt="" style="width:140px;height:140px" /></div><div class="cap">মসজিদে খেদমত</div></div>
+    <div><div class="tile"><img class="ri" src="assets/icons/emoji/books.svg" alt="" style="width:140px;height:140px" /></div><div class="cap">মাদ্রাসায় ক্লাস</div></div>
+    <div><div class="tile"><img class="ri" src="assets/icons/emoji/briefcase.svg" alt="" style="width:140px;height:140px" /></div><div class="cap">অন্য কাজে ব্যস্ত</div></div>
+  </div>
+  <div class="phone"><div class="badge" id="unread">১</div><div class="scr">
+    <div class="notif bn" id="n1" style="top:80px"><img class="ri" src="assets/icons/logos/messenger.svg" alt="" style="width:80px;height:80px" /><div><div class="t">নতুন কাস্টমার</div><div class="m">ভাই, প্রোডাক্টের দাম কত?</div></div></div>
+    <div class="notif bn" id="n2" style="top:250px"><img class="ri" src="assets/icons/logos/whatsapp-icon.svg" alt="" style="width:80px;height:80px" /><div><div class="t">কাস্টমার</div><div class="m">অর্ডার করতে চাই...</div></div></div>
+    <div class="notif bn" id="n3" style="top:420px"><img class="ri" src="assets/icons/logos/messenger.svg" alt="" style="width:80px;height:80px" /><div><div class="t">কাস্টমার</div><div class="m">কেউ আছেন?</div></div></div>
+    <img class="ri" id="hg" src="assets/icons/emoji/hourglass-not-done.svg" alt="" style="position:absolute;left:50%;bottom:60px;width:150px;height:150px;margin-left:-75px" />
+  </div></div>
+  <div class="mid q hd2 bn">সঙ্গে সঙ্গে <span class="gtxt">উত্তর দিতে</span> পারছেন?</div>
+</section>
+
+<section id="S2" class="scene clip" data-start="12.45" data-duration="10.3" data-track-index="1">
+  <div class="mid t hd2 bn">এতগুলো কাজ <span class="gtxt">একসঙ্গে</span>!</div>
+  <div class="grid bn">
+    <div class="tc"><div class="ic"><img class="ri" src="assets/icons/logos/facebook.svg" alt="" style="width:120px;height:120px" /></div>নিয়মিত ফেসবুক পোস্ট</div>
+    <div class="tc"><div class="ic"><img class="ri" src="assets/icons/logos/messenger.svg" alt="" style="width:110px;height:110px" /><img class="ri" src="assets/icons/logos/whatsapp-icon.svg" alt="" style="width:110px;height:110px" /></div>মেসেজের উত্তর</div>
+    <div class="tc"><div class="ic"><img class="ri" src="assets/icons/emoji/ledger.svg" alt="" style="width:120px;height:120px" /></div>হিসাব-নিকাশ</div>
+    <div class="tc"><div class="ic"><img class="ri" src="assets/icons/emoji/megaphone.svg" alt="" style="width:120px;height:120px" /></div>ব্যবসার মার্কেটিং</div>
+  </div>
+  <div class="hard bn"><img class="ri" src="assets/icons/emoji/weary-face.svg" alt="" style="width:170px;height:170px" /><div class="hd">সত্যিই কঠিন!</div></div>
+</section>
+
+<section id="S3" class="scene clip" data-start="22.75" data-duration="4.95" data-track-index="1">
+  <canvas id="c3agent" class="canvas3d"></canvas>
+  <div class="mid t hd2 bn">এবার সব কাজ সহজ করবে</div>
+  <div class="mid t2 hd bn"><span class="gtxt">একজন AI Agent!</span></div>
+</section>
+
+<section id="S4" class="scene clip" data-start="27.7" data-duration="11.0" data-track-index="1">
+  <div class="mid salam hd2 bn">আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ</div>
+  <div class="panel"><img src="assets/media/cut-kawsar.png" alt="" /></div>
+  <div class="nameplate bn">
+    <div class="n">ক্যালিগ্রাফার হাফেজ মাওলানা <span class="gtxt">কাউসার আহমাদ</span></div>
+    <div class="r">সিনিয়র অ্যাডমিন ও ঢাকা বিভাগীয় প্রধান</div>
+    <div class="org"><img src="assets/media/alkhidmah-logo.jpg" alt="" />আল খিদমাহ ন্যাচারাল কেয়ার</div>
+  </div>
+</section>
+
+<section id="S5" class="scene clip" data-start="38.7" data-duration="8.4" data-track-index="1">
+  <div class="mid t hd2 bn">প্রিয় <span class="gtxt">প্রতিনিধিবৃন্দ</span></div>
+  <div class="hs"><img class="ri" src="assets/icons/emoji/handshake.svg" alt="" style="width:200px;height:200px" /></div>
+  <div class="grid bn">
+    <div><div class="tile"><img class="ri" src="assets/icons/logos/facebook.svg" alt="" style="width:180px;height:180px" /></div><div class="cap">Facebook</div></div>
+    <div><div class="tile"><img class="ri" src="assets/icons/logos/youtube-icon.svg" alt="" style="width:190px;height:190px" /></div><div class="cap">YouTube</div></div>
+    <div><div class="tile"><img class="ri" src="assets/icons/logos/whatsapp-icon.svg" alt="" style="width:180px;height:180px" /></div><div class="cap">WhatsApp</div></div>
+    <div><div class="tile"><img class="ri" src="assets/icons/logos/telegram.svg" alt="" style="width:180px;height:180px" /></div><div class="cap">Telegram</div></div>
+  </div>
+  <div class="auto"><div class="pill bn"><img class="ri" src="assets/icons/emoji/gear.svg" alt="" style="width:66px;height:66px" />সব Automation!</div></div>
+</section>
+
+<section id="S6" class="scene clip" data-start="47.1" data-duration="11.35" data-track-index="1">
+  <div class="mid t hd2 bn">AI Agent যা যা <span class="gtxt">করবে</span></div>
+  <div class="list bn">
+    <div class="li"><div class="k"><img class="ri" src="assets/icons/emoji/memo.svg" alt="" style="width:84px;height:84px" /></div>পোস্ট তৈরি ও পাবলিশ<div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:64px;height:64px" /></div></div>
+    <div class="li"><div class="k"><img class="ri" src="assets/icons/emoji/speech-balloon.svg" alt="" style="width:84px;height:84px" /></div>কাস্টমারের মেসেজের উত্তর<div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:64px;height:64px" /></div></div>
+    <div class="li"><div class="k"><img class="ri" src="assets/icons/emoji/ledger.svg" alt="" style="width:84px;height:84px" /></div>হিসাব-নিকাশ গুছিয়ে রাখা<div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:64px;height:64px" /></div></div>
+    <div class="li"><div class="k"><img class="ri" src="assets/icons/emoji/movie-camera.svg" alt="" style="width:84px;height:84px" /></div>ভিডিও তৈরি<div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:64px;height:64px" /></div></div>
+    <div class="li"><div class="k"><img class="ri" src="assets/icons/emoji/laptop.svg" alt="" style="width:84px;height:84px" /></div>ডিজিটাল কাজ অটোমেশন<div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:64px;height:64px" /></div></div>
+  </div>
+</section>
+
+<section id="S7" class="scene clip" data-start="58.45" data-duration="11.95" data-track-index="1">
+  <div class="mid t hd2 bn">আপনি খেদমতে ব্যস্ত,<br /><span class="gtxt">ব্যবসা চলছে নিজে নিজে</span></div>
+  <div class="busy bn"><div style="position:relative;width:220px;height:220px"><img class="ri" id="bz1" src="assets/icons/emoji/mosque.svg" alt="" style="position:absolute;inset:0;width:220px;height:220px" /><img class="ri" id="bz2" src="assets/icons/emoji/books.svg" alt="" style="position:absolute;inset:0;width:220px;height:220px;opacity:0" /></div><div style="position:relative;height:60px;width:100%"><div class="lb" id="bzt" style="position:absolute;left:0;right:0">মসজিদে খেদমত</div><div class="lb" id="bzt2" style="position:absolute;left:0;right:0;opacity:0">মাদ্রাসায় খেদমত</div></div><img class="ri" src="assets/icons/emoji/prayer-beads.svg" alt="" style="width:110px;height:110px" /></div>
+  <img class="arrow" src="assets/icons/emoji/high-voltage.svg" alt="" />
+  <div class="ph"><div class="scr bn">
+    <div class="msg" id="m1"><div class="in">দাম কত ভাই?</div><div class="out"><img class="ri" src="assets/icons/emoji/robot.svg" alt="" style="width:34px;height:34px" />দাম ও বিস্তারিত পাঠালাম</div></div>
+    <div class="msg" id="m2"><div class="in">ডেলিভারি কবে?</div><div class="out"><img class="ri" src="assets/icons/emoji/robot.svg" alt="" style="width:34px;height:34px" />২-৩ দিনের মধ্যে</div></div>
+    <div class="msg" id="m3"><div class="in">অর্ডার করবো</div><div class="out"><img class="ri" src="assets/icons/emoji/robot.svg" alt="" style="width:34px;height:34px" />অর্ডার নেওয়া হয়েছে</div></div>
+  </div></div>
+  <div class="run bn"><div class="pill"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:60px;height:60px" />অটোমেশন চলছে ২৪/৭</div></div>
+</section>
+
+<section id="S8" class="scene clip" data-start="70.4" data-duration="8.9" data-track-index="1">
+  <div class="mid t bn"><img class="ri" src="assets/icons/emoji/wrapped-gift.svg" alt="" style="width:220px;height:220px" /><div class="hd">এবার <span class="gtxt">অফারের</span> কথা</div></div>
+  <div class="vals bn">
+    <div class="val"><img class="ri" src="assets/icons/emoji/robot.svg" alt="" style="width:100px;height:100px" /><div class="k">AI Agent<br /><span style="font-size:34px;color:var(--mut)">অফিসিয়াল মূল্য</span></div><div class="v">৬০০–৯০০ ৳</div><div class="x"></div></div>
+    <div class="val"><img class="ri" src="assets/icons/emoji/gem-stone.svg" alt="" style="width:100px;height:100px" /><div class="k">১ বিলিয়ন টোকেন<br /><span style="font-size:34px;color:var(--mut)">আলাদা মূল্য</span></div><div class="v">২,০০০+ ৳</div><div class="x"></div></div>
+  </div>
+</section>
+
+<section id="S9" class="scene clip" data-start="79.3" data-duration="10.65" data-track-index="1">
+  <canvas id="c3price" class="canvas3d"></canvas>
+  <div class="mid t hd2 bn">সম্মানিত প্রতিনিধিদের জন্য<br /><span class="gtxt">বিশেষ সুযোগ!</span></div>
+  <div class="pack bn"><img class="ri" src="assets/icons/emoji/robot.svg" alt="" style="width:100px;height:100px" />AI Agent + ১ বিলিয়ন টোকেন<img class="ri" src="assets/icons/emoji/gem-stone.svg" alt="" style="width:90px;height:90px" /></div>
+  <div class="price bn"><div class="m">সম্পূর্ণ প্যাকেজ মাত্র</div><div class="v gtxt"><span id="pr">০</span><span class="tk">টাকা</span></div></div>
+  <div class="cta bn"><div><img class="ri" src="assets/icons/emoji/shopping-cart.svg" alt="" style="width:76px;height:76px" />আজই সংগ্রহ করুন</div></div>
+</section>
+
+<section id="S10" class="scene clip" data-start="89.95" data-duration="5.55" data-track-index="1">
+  <div class="list bn">
+    <div class="b"><img class="ri" src="assets/icons/emoji/rocket.svg" alt="" style="width:130px;height:130px" />প্রযুক্তিকে কাজে লাগান</div>
+    <div class="b"><img class="ri" src="assets/icons/emoji/stopwatch.svg" alt="" style="width:130px;height:130px" />সময় বাঁচান</div>
+    <div class="b"><img class="ri" src="assets/icons/emoji/chart-increasing.svg" alt="" style="width:130px;height:130px" />ব্যবসাকে এগিয়ে নিন</div>
+  </div>
+</section>
+
+<section id="S11" class="scene clip" data-start="95.5" data-duration="5.1" data-track-index="1">
+  <div class="mid dua hd2 bn">আল্লাহ আমাদের সবার কাজে<br /><span class="gtxt">বরকত দান করুন</span></div>
+  <img class="hands" src="assets/icons/emoji/palms-up-together.svg" alt="" />
+  <div class="p"><img src="assets/media/cut-kawsar.png" alt="" /></div>
+  <div class="mid salam hd2 bn">আসসালামু আলাইকুম ওয়া রহমাতুল্লাহ</div>
+</section>
+
+<section id="END" class="scene clip" data-start="100.6" data-duration="2.4" data-track-index="2">
+  <div class="lg"><img src="assets/media/alkhidmah-logo.jpg" alt="Al-Khidmah Natural Care" /></div>
+  <div class="tg bn">AI Agent • মাত্র ৪৯৯ টাকা</div>
+</section>
+
+<div id="bug" class="bugk clip bn" data-start="0" data-duration="100.6" data-track-index="3"><img src="assets/media/alkhidmah-logo.jpg" alt="" />আল খিদমাহ ন্যাচারাল কেয়ার</div>
+<!--script-->
+tl.to(".flare.f1", { x: 300, y: 400, duration: 103, ease: "none" }, 0);
+tl.to(".flare.f2", { x: -260, y: -300, duration: 103, ease: "none" }, 0);
+tl.fromTo("#bug", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.5 }, 0.2);
+const popIn = (sel, t, extra = {}) => tl.fromTo(sel, { opacity: 0, scale: 0.4, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(2)", ...extra }, t);
+const slideIn = (sel, t, dx = 120) => tl.fromTo(sel, { opacity: 0, x: dx }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, t);
+
+// S1
+const r3 = $$("#S1 .row3 > div");
+[0.3, 2.2, 4.1].forEach((t, i) => popIn(r3[i], t));
+tl.to(r3, { scale: 0.85, y: -40, duration: 0.5, ease: "power2.inOut" }, 5.6);
+tl.fromTo("#S1 .phone", { y: 1400 }, { y: 0, duration: 0.7, ease: "power3.out" }, 5.6);
+gsap.set(["#n1", "#n2", "#n3", "#unread"], { opacity: 0 });
+[["#n1", 5.85], ["#n2", 7.3], ["#n3", 8.4]].forEach(([s, t]) => tl.fromTo(s, { opacity: 0, y: -60, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(2)" }, t));
+tl.fromTo("#unread", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(3)" }, 5.9);
+const unread = { v: 1 };
+tl.to(unread, { v: 3, duration: 1.2, ease: "steps(2)", onUpdate: () => ($("#unread").textContent = BN(Math.round(unread.v))) }, 7.25);
+tl.to("#S1 .phone", { x: 10, duration: 0.05, repeat: 7, yoyo: true }, 8.4);
+tl.fromTo("#hg", { opacity: 0, rotation: 0 }, { opacity: 1, rotation: 180, duration: 0.8, ease: "back.out(1.6)" }, 9.0);
+popIn("#S1 .q", 9.8);
+
+// S2
+slideIn("#S2 .t", 12.5, 0);
+const tcs = $$("#S2 .tc");
+[12.7, 14.55, 16.5, 17.85].forEach((t, i) => popIn(tcs[i], t));
+tl.to(tcs, { rotation: (i) => [-6, 5, 4, -5][i], x: (i) => [-14, 14, -10, 10][i], duration: 0.08, repeat: 9, yoyo: true }, 19.4);
+tl.to(tcs, { rotation: (i) => [-4, 3, 3, -3][i], scale: 0.92, duration: 0.3 }, 20.3);
+popIn("#S2 .hard", 21.5);
+
+// S3
+slideIn("#S3 .t", 22.85, 0);
+popIn("#S3 .t2", 24.4);
+
+// S4
+popIn("#S4 .salam", 27.85);
+tl.fromTo("#S4 .panel", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 27.75);
+tl.fromTo("#S4 .panel img", { y: 120, scale: 0.95 }, { y: 0, scale: 1, duration: 0.9, ease: "power3.out" }, 27.9);
+tl.fromTo("#S4 .nameplate", { opacity: 0, y: 140 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 30.1);
+tl.fromTo("#S4 .nameplate .r", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45 }, 32.85);
+tl.fromTo("#S4 .org", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.5, ease: "back.out(1.6)" }, 37.35);
+
+// S5
+slideIn("#S5 .t", 38.8, 0);
+popIn("#S5 .hs", 39.0);
+const pl = $$("#S5 .grid > div");
+[41.9, 43.2, 44.8, 45.6].forEach((t, i) => popIn(pl[i], t, { duration: 0.55 }));
+popIn("#S5 .auto", 46.2);
+tl.to("#S5 .tile", { y: -16, duration: 0.25, yoyo: true, repeat: 1, stagger: 0.08, ease: "power2.out" }, 46.3);
+
+// S6
+slideIn("#S6 .t", 47.15, 0);
+const lis = $$("#S6 .li");
+[47.3, 50.7, 52.3, 54.7, 56.3].forEach((t, i) => {
+  slideIn(lis[i], t);
+  tl.fromTo($(".ok", lis[i]), { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(3)" }, t + 0.4);
+});
+
+// S7
+slideIn("#S7 .t", 58.5, 0);
+slideIn("#S7 .busy", 58.7, -200);
+tl.to(["#bz1", "#bzt"], { opacity: 0, duration: 0.25 }, 60.5);
+tl.fromTo("#bz2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 60.6);
+tl.fromTo("#bzt2", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 60.6);
+tl.fromTo("#S7 .arrow", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 63.5);
+slideIn("#S7 .ph", 63.6, 300);
+gsap.set(["#m1", "#m2", "#m3"], { opacity: 0 });
+[["#m1", 65.8], ["#m2", 67.2], ["#m3", 68.6]].forEach(([s, t]) => {
+  tl.fromTo(s + " .in", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3 }, t - 0.5);
+  tl.set(s, { opacity: 1 }, t - 0.5);
+  tl.fromTo(s + " .out", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)" }, t);
+});
+popIn("#S7 .run", 66.2);
+
+// S8
+popIn("#S8 .t", 70.5);
+const vals = $$("#S8 .val");
+[72.1, 75.5].forEach((t, i) => slideIn(vals[i], t));
+tl.fromTo("#S8 .x", { scaleX: 0 }, { scaleX: 1, duration: 0.4, stagger: 0.15, ease: "power3.out" }, 78.4);
+
+// S9
+popIn("#S9 .t", 79.45);
+popIn("#S9 .pack", 82.1);
+tl.fromTo("#S9 .price", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 83.4);
+countUp($("#pr"), 499, 83.5, 0.8, (v) => BN(Math.round(v)));
+tl.to("#S9 .price .v", { scale: 1.12, duration: 0.2, yoyo: true, repeat: 1 }, 84.25);
+popIn("#S9 .cta", 86.1);
+tl.to("#S9 .cta div", { scale: 1.06, duration: 0.4, yoyo: true, repeat: 3, ease: "sine.inOut" }, 86.7);
+
+// S10
+const bs = $$("#S10 .b");
+[90.2, 91.6, 92.7].forEach((t, i) => slideIn(bs[i], t));
+
+// S11 + END
+popIn("#S11 .dua", 95.6);
+tl.fromTo("#S11 .hands", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 95.8);
+tl.fromTo("#S11 .p", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 96.2);
+popIn("#S11 .salam", 98.9);
+tl.fromTo("#END .lg", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 100.65);
+tl.fromTo("#END .tg", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5 }, 101.0);
+<!--module-->
+window.__hf = window.__hf || {};
+window.__hf.buildReady = window.__hf.buildReady || {};
+window.__hf.buildReady["agent3d"] = mount3D({ canvas: "c3agent", w: W, h: H, start: 22.75, kind: "logoOrbit", opts: { dur: 4.95, zoom: 0.62, tiles: [["assets/icons/emoji/robot.svg", 3.0, false], ["assets/icons/logos/facebook.svg", 1.2], ["assets/icons/logos/youtube-icon.svg", 1.2], ["assets/icons/logos/whatsapp-icon.svg", 1.2], ["assets/icons/logos/telegram.svg", 1.2], ["assets/icons/logos/messenger.svg", 1.2], ["assets/icons/emoji/ledger.svg", 1.2]] } });
+window.__hf.buildReady["price3d"] = mount3D({ canvas: "c3price", w: W, h: H, start: 79.3, kind: "field", opts: { dur: 10.65, zoom: 0.8 } });

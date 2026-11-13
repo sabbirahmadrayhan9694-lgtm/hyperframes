@@ -1,0 +1,330 @@
+<!--meta {
+  "w": 1080, "h": 1920, "dur": 65.5, "theme": "sunrise", "title": "AI কর্মী ২৪ ঘণ্টা — AI Agent",
+  "vo": "vo-ai-worker.mp3", "voDur": 63.25,
+  "media": ["muse-avatar.jpg", "muse-post-created-crop.jpg", "yt-channel-scheduled-crop.jpg", "muse-report-crop.jpg", "proof-chat-1c.jpg", "proof-chat-2c.jpg", "sabbir-muse-thumb.png"],
+  "sfx": [
+    ["whoosh-cinematic", 0.0, 0.3, 2.0], ["pop", 0.15, 0.45], ["key-press", 1.3, 0.3], ["pop", 1.5, 0.4], ["whoosh", 4.7, 0.4],
+    ["whoosh", 6.5, 0.4], ["error", 7.6, 0.2], ["impact-bass-1", 8.85, 0.45],
+    ["whoosh", 11.4, 0.4], ["typing", 12.1, 0.4, 1.2], ["click", 13.45, 0.55], ["notification", 13.9, 0.3, 1.0],
+    ["whoosh-short", 14.6, 0.4], ["ping", 14.7, 0.35], ["whoosh-short", 17.45, 0.4], ["ping", 17.55, 0.35], ["ping", 19.3, 0.35], ["whoosh-short", 21.15, 0.4], ["ping", 21.3, 0.35], ["ping", 23.3, 0.35],
+    ["whoosh-cinematic", 26.4, 0.3, 2.2], ["pop", 26.6, 0.3], ["pop", 26.9, 0.3], ["pop", 27.2, 0.3], ["whoosh", 29.5, 0.45], ["impact-bass-2", 30.1, 0.45], ["chime", 31.6, 0.35],
+    ["whoosh", 33.15, 0.4], ["click-soft", 36.5, 0.55], ["ping", 36.6, 0.4],
+    ["whoosh-cinematic", 39.7, 0.3, 2.0], ["sparkle", 40.0, 0.45], ["riser", 40.6, 0.25, 1.8, 8.2], ["impact-bass-1", 42.4, 0.55],
+    ["whoosh", 45.4, 0.4], ["pop", 46.0, 0.35], ["pop", 46.4, 0.35], ["chime", 49.4, 0.3], ["whoosh", 50.4, 0.35], ["chime", 52.6, 0.3],
+    ["whoosh", 54.15, 0.4], ["impact-bass-2", 56.75, 0.4],
+    ["whoosh", 57.95, 0.4], ["typing", 58.25, 0.35, 0.8], ["click", 59.15, 0.55], ["notification", 59.2, 0.3, 1.2],
+    ["whoosh-cinematic", 63.3, 0.3, 2.0], ["chime", 63.7, 0.4]
+  ]
+} -->
+<!--style-->
+.bg-fx { position:absolute; inset:0; }
+.flare.f1 { width:1200px; height:1200px; left:-500px; top:-300px; }
+.flare.f2 { width:1000px; height:1000px; right:-400px; bottom:-300px; }
+.bug { left:0; right:0; margin:0 auto; width:fit-content; top:70px; }
+.hd { font-weight:700; font-size:88px; line-height:1.25; text-align:center; }
+.hd2 { font-weight:700; font-size:72px; line-height:1.3; text-align:center; }
+.tx { font-size:52px; font-weight:600; line-height:1.4; text-align:center; color:var(--mut); }
+.mid { position:absolute; left:60px; right:60px; }
+.ri { display:block; }
+
+/* S1 */
+#S1 .clock { position:absolute; left:0; right:0; margin:0 auto; top:300px; width:420px; height:420px; }
+#S1 .big { top:760px; display:flex; align-items:baseline; justify-content:center; gap:24px; }
+#S1 .big .n { font-family:Poppins; font-weight:900; font-size:260px; line-height:1; }
+#S1 .big .u { font-size:110px; font-weight:700; }
+#S1 .worker { top:1080px; display:flex; justify-content:center; }
+#S1 .worker .pill { font-size:48px; padding:18px 40px; gap:18px; }
+#S1 .q { top:1290px; }
+/* S2 */
+#S2 .l1 { top:420px; display:flex; flex-direction:column; align-items:center; gap:30px; }
+#S2 .l1 .t { position:relative; font-size:70px; font-weight:700; color:var(--mut); }
+#S2 .strike { position:absolute; left:-10px; right:-10px; top:50%; height:10px; border-radius:6px; background:#e03131; transform-origin:left center; }
+#S2 .l2 { top:900px; }
+#S2 .bolt { position:absolute; left:0; right:0; margin:0 auto; top:1330px; width:260px; height:260px; }
+/* phone + chat */
+.phone { position:absolute; border-radius:70px; padding:18px; background:linear-gradient(160deg,#2b2f3a,#0e1015); box-shadow:0 0 0 2px #3a3f4c, 0 40px 110px rgba(60,30,10,.35); }
+.phone .scr { color:#fff; position:relative; width:100%; height:100%; border-radius:54px; overflow:hidden; background:#0f1115; }
+.phone .notch { position:absolute; top:16px; left:50%; width:140px; height:34px; margin-left:-70px; border-radius:20px; background:#000; z-index:5; }
+.phone img.shot { position:absolute; left:0; top:0; width:100%; display:block; }
+#S3 .phone { left:230px; top:560px; width:620px; height:1260px; }
+#S3 .chat-h { position:absolute; left:0; right:0; top:0; height:170px; padding:66px 28px 0; display:flex; align-items:center; gap:18px; background:#1a1d24; border-bottom:1px solid #2a2e38; }
+#S3 .av { width:76px; height:76px; border-radius:50%; object-fit:cover; border:3px solid var(--g); }
+#S3 .nm { font-weight:700; font-size:34px; }
+#S3 .st { font-size:26px; color:#ffb37a; position:relative; height:34px; }
+#S3 .st span { position:absolute; left:0; top:0; white-space:nowrap; }
+#S3 .msgs { position:absolute; left:0; right:0; top:200px; padding:0 24px; }
+#S3 .bub { max-width:460px; padding:20px 26px; border-radius:26px; font-size:32px; line-height:1.4; margin-bottom:18px; }
+#S3 .me { margin-left:auto; background:var(--g); border-bottom-right-radius:6px; }
+#S3 .bot { background:#252a33; border-bottom-left-radius:6px; display:flex; align-items:center; gap:14px; width:fit-content; }
+#S3 .spin { width:30px; height:30px; border-radius:50%; border:4px solid rgba(255,179,122,.25); border-top-color:#ffb37a; }
+#S3 .input { position:absolute; left:20px; right:20px; bottom:26px; height:92px; border-radius:46px; background:#20242c; display:flex; align-items:center; padding:0 18px 0 32px; gap:12px; }
+#S3 .input .tt { flex:1; font-size:30px; white-space:nowrap; overflow:hidden; }
+#S3 .input .ph { color:#7d8494; }
+#S3 .send { width:70px; height:70px; border-radius:50%; background:var(--g); color:#fff; display:flex; align-items:center; justify-content:center; }
+#S3 .cursor { display:inline-block; width:3px; height:36px; background:var(--g); vertical-align:middle; margin-left:2px; }
+#S3 .sv { position:absolute; inset:0; background:#0f1115; }
+#S3 .top { position:absolute; left:40px; right:40px; top:170px; }
+#S3 .chips { margin-top:28px; display:flex; justify-content:center; gap:16px; }
+#S3 .chip { position:relative; width:150px; height:150px; border-radius:36px; background:#fff; box-shadow:var(--cardshadow); display:flex; align-items:center; justify-content:center; }
+#S3 .chip .ok { position:absolute; right:-12px; top:-12px; }
+#S3 .chip.on { box-shadow:0 0 0 4px var(--g), var(--cardshadow); }
+/* S4 */
+#S4 .t1 { top:200px; }
+#S4 .t2 { bottom:330px; display:flex; flex-direction:column; align-items:center; gap:22px; }
+#S4 .t2 .row { display:flex; align-items:center; gap:18px; padding:20px 36px; font-size:50px; font-weight:700; }
+/* S5 */
+#S5 .kick { top:300px; display:flex; justify-content:center; }
+#S5 .kick .pill { font-size:44px; padding:16px 40px; }
+#S5 .t { top:420px; }
+#S5 .gcard { position:absolute; left:90px; right:90px; top:820px; padding:56px 56px; }
+#S5 .grow { display:flex; align-items:center; gap:30px; }
+#S5 .gic { width:150px; height:150px; border-radius:38px; background:#fff; box-shadow:0 10px 30px rgba(90,50,20,.14); display:flex; align-items:center; justify-content:center; flex:none; }
+#S5 .acct { font-size:36px; color:var(--mut); font-family:Poppins; margin-top:6px; }
+#S5 .tg { margin-top:50px; display:flex; align-items:center; justify-content:space-between; padding:34px 40px; border-radius:28px; background:rgba(var(--rgb),.07); border:1.5px solid var(--line); font-size:50px; font-weight:700; }
+#S5 .sw { width:150px; height:82px; border-radius:42px; background:#d9d2c8; position:relative; }
+#S5 .knob { position:absolute; top:8px; left:8px; width:66px; height:66px; border-radius:50%; background:#fff; box-shadow:0 4px 10px rgba(0,0,0,.2); }
+#S5 .done { margin-top:40px; display:flex; align-items:center; gap:18px; font-size:46px; color:var(--g); font-weight:700; }
+/* S6 */
+#S6 .tok { top:330px; }
+#S6 .tok .n { font-family:Poppins; font-weight:900; font-size:150px; line-height:1.1; }
+#S6 .tok .u { font-size:80px; font-weight:700; }
+#S6 .pr { top:880px; display:flex; flex-direction:column; align-items:center; gap:10px; }
+#S6 .pr .m { font-size:64px; font-weight:700; }
+#S6 .pr .v { font-family:Poppins; font-weight:900; font-size:300px; line-height:1; }
+#S6 .pr .v .t { font-family:"Hind Siliguri"; font-size:130px; margin-left:16px; }
+#S6 .bag { position:absolute; right:70px; top:1450px; width:230px; height:230px; }
+/* S7 */
+#S7 .t { top:180px; }
+#S7 .tag { top:400px; display:flex; justify-content:center; }
+#S7 .tag .pill { font-size:40px; padding:14px 34px; }
+#S7 .phone { top:520px; left:200px; width:680px; height:1250px; }
+#S7 .p1 { z-index:1; }
+#S7 .p2 { z-index:2; }
+#S7 .stamp { position:absolute; left:0; right:0; bottom:-60px; margin:0 auto; width:fit-content; padding:16px 30px; border-radius:999px; background:#2f9e44; color:#fff; font-size:38px; font-weight:700; display:flex; align-items:center; gap:12px; box-shadow:0 14px 40px rgba(47,158,68,.4); }
+/* S8 */
+#S8 .a { top:520px; }
+#S8 .b { top:1010px; }
+#S8 .sw8 { position:absolute; left:0; right:0; margin:0 auto; top:1300px; width:300px; height:300px; }
+/* S9 */
+#S9 .t { top:300px; display:flex; align-items:center; justify-content:center; gap:28px; }
+#S9 .post { position:absolute; left:60px; right:60px; top:560px; padding:40px; background:#fff; color:#111; border-radius:34px; box-shadow:var(--cardshadow); }
+#S9 .cm { display:flex; align-items:center; gap:20px; }
+#S9 .cm img.a { width:90px; height:90px; border-radius:50%; object-fit:cover; object-position:70% 30%; }
+#S9 .field { flex:1; height:90px; border-radius:45px; background:#eef0f3; display:flex; align-items:center; padding:0 34px; font-size:40px; font-family:Poppins; font-weight:700; }
+#S9 .field .ph { color:#8a8d91; font-weight:400; font-size:34px; }
+#S9 .sendb { width:90px; height:90px; border-radius:50%; background:#1b74e4; color:#fff; display:flex; align-items:center; justify-content:center; }
+#S9 .posted { margin-top:30px; display:flex; gap:20px; align-items:flex-start; }
+#S9 .posted .b { background:#eef0f3; border-radius:28px; padding:18px 30px; }
+#S9 .posted .nm { font-size:28px; font-weight:700; font-family:Poppins; }
+#S9 .posted .x { font-size:52px; font-weight:800; font-family:Poppins; color:var(--g); }
+#S9 .helper { top:1100px; display:flex; flex-direction:column; align-items:center; gap:24px; }
+#END .lc { position:absolute; left:90px; right:90px; top:600px; height:600px; border-radius:44px; overflow:hidden; box-shadow:0 40px 120px rgba(60,30,10,.35); }
+#END .lc img { width:100%; height:100%; object-fit:cover; display:block; }
+#END .tg { position:absolute; left:0; right:0; top:1300px; text-align:center; font-size:48px; font-weight:700; }
+<!--body-->
+<div class="bg-fx"><div class="grid-bg"></div><div class="flare f1"></div><div class="flare f2"></div></div>
+
+<section id="S1" class="scene clip" data-start="0" data-duration="6.55" data-track-index="1">
+  <img class="clock" src="assets/icons/emoji/alarm-clock.svg" alt="" />
+  <div class="mid big"><span class="n gtxt" id="hrs">০</span><span class="u bn">ঘণ্টা</span></div>
+  <div class="mid worker"><div class="pill bn"><img class="ri" src="assets/icons/emoji/robot.svg" alt="" style="width:64px;height:64px" />একজন AI কর্মী কাজ করছে</div></div>
+  <div class="mid q hd bn">আপনার কতটা <span class="gtxt">সময় বাঁচবে?</span></div>
+</section>
+
+<section id="S2" class="scene clip" data-start="6.55" data-duration="4.9" data-track-index="1">
+  <div class="mid l1 bn"><img class="ri" src="assets/icons/emoji/speech-balloon.svg" alt="" style="width:170px;height:170px" /><div class="t">শুধু AI দিয়ে কথা বলা নয়<div class="strike"></div></div></div>
+  <div class="mid l2 hd bn"><span class="gtxt">AI-কে দিয়েই</span> করিয়ে নিন আপনার প্রতিদিনের কাজ!</div>
+  <img class="bolt" src="assets/icons/emoji/high-voltage.svg" alt="" />
+</section>
+
+<section id="S3" class="scene clip" data-start="11.45" data-duration="14.95" data-track-index="1">
+  <div class="top">
+    <div class="hd2 bn">শুধু একটি <span class="gtxt">কমান্ড</span> দিন</div>
+    <div class="chips">
+      <div class="chip"><img class="ri" src="assets/icons/logos/facebook.svg" alt="" style="width:86px;height:86px" /><div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:52px;height:52px" /></div></div>
+      <div class="chip"><img class="ri" src="assets/icons/emoji/memo.svg" alt="" style="width:86px;height:86px" /><div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:52px;height:52px" /></div></div>
+      <div class="chip"><img class="ri" src="assets/icons/logos/youtube-icon.svg" alt="" style="width:92px;height:92px" /><div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:52px;height:52px" /></div></div>
+      <div class="chip"><img class="ri" src="assets/icons/logos/google-gmail.svg" alt="" style="width:86px;height:86px" /><div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:52px;height:52px" /></div></div>
+      <div class="chip"><img class="ri" src="assets/icons/emoji/laptop.svg" alt="" style="width:86px;height:86px" /><div class="ok"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:52px;height:52px" /></div></div>
+    </div>
+  </div>
+  <div class="phone"><div class="scr">
+    <div class="notch"></div>
+    <div class="chat-h"><img class="av" src="assets/media/muse-avatar.jpg" alt="" /><div><div class="nm">Muse</div><div class="st"><span id="s1">online</span><span id="s2">typing...</span><span id="s3">Starting browser...</span><span id="s4">Working on it...</span></div></div></div>
+    <div class="msgs">
+      <div class="bub me bn" id="cmd">আজকের ফেসবুক পোস্ট বানিয়ে পাবলিশ করো</div>
+      <div class="bub bot" id="bot"><div class="spin"></div><span>Starting browser...</span></div>
+    </div>
+    <div class="input"><div class="tt bn"><span class="ph" id="ph">Message</span><span id="typed"></span><span class="cursor" id="cur"></span></div><div class="send">&#9654;</div></div>
+    <div class="sv" id="sv1"><img class="shot" id="im1" src="assets/media/muse-post-created-crop.jpg" alt="" /></div>
+    <div class="sv" id="sv2"><img class="shot" id="im2" src="assets/media/yt-channel-scheduled-crop.jpg" alt="" /></div>
+    <div class="sv" id="sv3"><img class="shot" id="im3" src="assets/media/muse-report-crop.jpg" alt="" /></div>
+  </div></div>
+</section>
+
+<section id="S4" class="scene clip" data-start="26.4" data-duration="6.75" data-track-index="1">
+  <canvas id="c3merge" class="canvas3d"></canvas>
+  <div class="mid t1 hd2 bn">আলাদা আলাদা টুলে<br />যেতে হবে না</div>
+  <div class="mid t2 bn">
+    <div class="row card"><img class="ri" src="assets/icons/emoji/robot.svg" alt="" style="width:70px;height:70px" />নিজের AI Agent-কে নির্দেশ দিন</div>
+    <div class="row card"><img class="ri" src="assets/icons/emoji/chart-increasing.svg" alt="" style="width:70px;height:70px" />কাজের অগ্রগতি দেখুন</div>
+  </div>
+</section>
+
+<section id="S5" class="scene clip" data-start="33.15" data-duration="6.55" data-track-index="1">
+  <div class="mid kick"><div class="pill bn"><img class="ri" src="assets/icons/emoji/star-struck.svg" alt="" style="width:56px;height:56px" />সবচেয়ে মজার বিষয়</div></div>
+  <div class="mid t hd2 bn">আপনার নিজের<br /><span class="gtxt">পার্সোনাল Gmail</span> অ্যাকাউন্টেই</div>
+  <div class="gcard card">
+    <div class="grow"><div class="gic"><img class="ri" src="assets/icons/logos/google-gmail.svg" alt="" style="width:100px;height:100px" /></div><div><div style="font-size:64px;font-weight:700">Gmail</div><div class="acct">yourname@gmail.com</div></div></div>
+    <div class="tg"><span>AI Agent</span><div class="sw"><div class="knob"></div></div></div>
+    <div class="done bn"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:56px;height:56px" />শক্তিশালী AI Agent চালু!</div>
+  </div>
+</section>
+
+<section id="S6" class="scene clip" data-start="39.7" data-duration="5.7" data-track-index="1">
+  <canvas id="c3field" class="canvas3d"></canvas>
+  <div class="mid tok center bn"><div class="m" style="font-size:60px;font-weight:700">সাথে পাচ্ছেন</div><div class="n gtxt" id="tk">০</div><div class="u">টোকেন!</div></div>
+  <div class="mid pr bn"><div class="m">আর দাম মাত্র</div><div class="v gtxt"><span id="pr">০</span><span class="t">টাকা</span></div></div>
+  <img class="bag" src="assets/icons/emoji/money-bag.svg" alt="" />
+</section>
+
+<section id="S7" class="scene clip" data-start="45.4" data-duration="8.75" data-track-index="1">
+  <div class="mid t hd2 bn">ইতোমধ্যে <span class="gtxt">অনেকেই</span> নিয়েছেন</div>
+  <div class="mid tag"><div class="pill bn"><img class="ri" src="assets/icons/emoji/camera-with-flash.svg" alt="" style="width:52px;height:52px" />গ্রাহকদের বাস্তব স্ক্রিনশট</div></div>
+  <div class="phone p1"><div class="scr"><img class="shot" id="pc1" src="assets/media/proof-chat-1c.jpg" alt="" /></div><div class="stamp bn"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:44px;height:44px" />সেটআপ সম্পন্ন</div></div>
+  <div class="phone p2"><div class="scr"><img class="shot" id="pc2" src="assets/media/proof-chat-2c.jpg" alt="" /></div><div class="stamp bn"><img class="ri" src="assets/icons/emoji/check-mark-button.svg" alt="" style="width:44px;height:44px" />সেটআপ সম্পন্ন</div></div>
+</section>
+
+<section id="S8" class="scene clip" data-start="54.15" data-duration="3.8" data-track-index="1">
+  <div class="mid a hd2 bn">নিজের কাজ আরও<br /><span class="gtxt">সহজ</span> করতে চান?</div>
+  <div class="mid b hd bn">তাহলে আর দেরি কেন?</div>
+  <img class="sw8" src="assets/icons/emoji/stopwatch.svg" alt="" />
+</section>
+
+<section id="S9" class="scene clip" data-start="57.95" data-duration="5.35" data-track-index="1">
+  <div class="mid t hd bn"><img class="ri" src="assets/icons/logos/facebook.svg" alt="" style="width:110px;height:110px" />কমেন্ট করুন</div>
+  <div class="post">
+    <div class="cm"><img class="a" src="assets/media/sabbir-muse-thumb.png" alt="" /><div class="field"><span class="ph" id="cph">Write a comment...</span><span id="ctyped"></span></div><div class="sendb">&#9654;</div></div>
+    <div class="posted"><img class="a" src="assets/media/sabbir-muse-thumb.png" alt="" style="width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:70% 30%" /><div class="b"><div class="nm">You</div><div class="x">AI AGENT</div></div></div>
+  </div>
+  <div class="mid helper bn"><img class="ri" src="assets/icons/emoji/robot.svg" alt="" style="width:200px;height:200px" /><div class="hd2">আপনার ডিজিটাল কাজের<br /><span class="gtxt">নতুন সহকারী</span></div></div>
+</section>
+
+<section id="END" class="scene clip" data-start="63.3" data-duration="2.2" data-track-index="2">
+  <div class="lc"><img src="assets/logo-full.png" alt="Sabbir Rayhan Academy" /></div>
+  <div class="tg bn">Learn Skills. Build Business. Grow with AI.</div>
+</section>
+
+<div id="bug" class="brandbug bug clip" data-start="0" data-duration="63.3" data-track-index="3"><img src="assets/logo-mark.png" alt="" /><span>Sabbir Rayhan Academy</span></div>
+<!--script-->
+tl.to(".flare.f1", { x: 260, y: 300, duration: 65.5, ease: "none" }, 0);
+tl.to(".flare.f2", { x: -240, y: -260, duration: 65.5, ease: "none" }, 0);
+tl.fromTo("#bug", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.5 }, 0.3);
+
+// S1
+tl.fromTo("#S1 .clock", { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.7, ease: "back.out(2)" }, 0.1);
+tl.to("#S1 .clock", { rotation: 7, duration: 0.06, repeat: 11, yoyo: true, ease: "sine.inOut" }, 0.8);
+tl.fromTo("#S1 .big", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.2);
+countUp($("#hrs"), 24, 1.2, 1.4, (v) => BN(Math.round(v)));
+tl.fromTo("#S1 .worker .pill", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 1.6);
+tl.to(["#S1 .clock", "#S1 .big", "#S1 .worker"], { y: -140, scale: 0.86, duration: 0.6, ease: "power3.inOut" }, 4.6);
+tl.fromTo("#S1 .q", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.55, ease: "back.out(1.6)" }, 4.8);
+
+// S2
+tl.fromTo("#S2 .l1", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 6.6);
+tl.fromTo("#S2 .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power3.out" }, 7.6);
+tl.to("#S2 .l1", { opacity: 0.45, scale: 0.9, duration: 0.4 }, 8.5);
+tl.fromTo("#S2 .l2", { opacity: 0, scale: 0.8, y: 40 }, { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "back.out(1.7)" }, 8.85);
+tl.fromTo("#S2 .bolt", { opacity: 0, y: 200, rotation: -20 }, { opacity: 1, y: 0, rotation: 0, duration: 0.6, ease: "back.out(2)" }, 9.2);
+
+// S3
+const S3 = 11.45;
+tl.fromTo("#S3 .hd2", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.5 }, S3 + 0.05);
+tl.fromTo("#S3 .chip", { opacity: 0, y: 40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, stagger: 0.08, ease: "back.out(2)" }, S3 + 0.2);
+tl.fromTo("#S3 .phone", { y: 900, rotation: 6 }, { y: 0, rotation: 0, duration: 0.8, ease: "power3.out" }, S3);
+gsap.set(["#cmd", "#bot", "#s2", "#s3", "#s4", "#S3 .ok"], { opacity: 0 });
+tl.set("#ph", { opacity: 0 }, S3 + 0.65);
+tl.set("#s1", { opacity: 0 }, S3 + 0.65);
+tl.set("#s2", { opacity: 1 }, S3 + 0.65);
+typeText($("#typed"), "আজকের ফেসবুক পোস্ট বানিয়ে পাবলিশ করো", S3 + 0.65, 1.25);
+tl.to("#cur", { opacity: 0, duration: 0.01, repeat: 11, yoyo: true, repeatDelay: 0.2 }, S3);
+tl.to("#S3 .send", { scale: 0.8, duration: 0.08, yoyo: true, repeat: 1 }, S3 + 2.0);
+tl.set("#typed", { opacity: 0 }, S3 + 2.05);
+tl.set("#ph", { opacity: 1 }, S3 + 2.05);
+tl.fromTo("#cmd", { opacity: 0, y: 40, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, S3 + 2.05);
+tl.set("#s2", { opacity: 0 }, S3 + 2.45);
+tl.set("#s3", { opacity: 1 }, S3 + 2.45);
+tl.fromTo("#bot", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35 }, S3 + 2.45);
+tl.to("#S3 .spin", { rotation: 1080, duration: 2.5, ease: "none" }, S3 + 2.45);
+tl.set("#s3", { opacity: 0 }, S3 + 2.95);
+tl.set("#s4", { opacity: 1 }, S3 + 2.95);
+// result screens slide in, synced to voice
+[["#sv1", "#im1", 14.6, 17.4, -620], ["#sv2", "#im2", 17.45, 21.1, -560], ["#sv3", "#im3", 21.15, 26.4, -720]].forEach(([sv, im, a, b, dy]) => {
+  tl.fromTo(sv, { yPercent: 100 }, { yPercent: 0, duration: 0.5, ease: "power3.out" }, a);
+  tl.fromTo(im, { y: 0 }, { y: dy, duration: b - a - 0.8, ease: "sine.inOut" }, a + 0.6);
+});
+const chips = $$("#S3 .chip");
+[14.7, 17.55, 19.3, 21.3, 23.3].forEach((t, i) => {
+  tl.fromTo($(".ok", chips[i]), { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(3)" }, t);
+  tl.to(chips[i], { y: -14, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out" }, t);
+  tl.set(chips[i], { className: "chip on" }, t);
+});
+
+// S4
+tl.fromTo("#S4 .t1", { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.5 }, 26.55);
+tl.fromTo("#S4 .t2 .row", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, stagger: 1.6, ease: "back.out(1.6)" }, 29.85);
+
+// S5
+tl.fromTo("#S5 .kick .pill", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 33.25);
+tl.fromTo("#S5 .t", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 34.5);
+tl.fromTo("#S5 .gcard", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 35.0);
+tl.to("#S5 .knob", { x: 68, duration: 0.3, ease: "power2.inOut" }, 36.5);
+tl.to("#S5 .sw", { backgroundColor: CV("--g"), duration: 0.3 }, 36.5);
+tl.fromTo("#S5 .done", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45 }, 36.85);
+tl.to("#S5 .gcard", { scale: 1.03, duration: 0.3, yoyo: true, repeat: 1 }, 36.6);
+
+// S6
+tl.fromTo("#S6 .tok", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 39.85);
+countUp($("#tk"), 1000000000, 40.0, 1.6, (v) => BN(Math.round(v).toLocaleString("en-US")));
+tl.fromTo("#S6 .pr", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2)" }, 42.3);
+countUp($("#pr"), 249, 42.4, 0.8, (v) => BN(Math.round(v)));
+tl.fromTo("#S6 .bag", { opacity: 0, y: 200, rotation: 20 }, { opacity: 1, y: 0, rotation: 0, duration: 0.6, ease: "bounce.out" }, 42.6);
+tl.to("#S6 .pr .v", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 43.3);
+
+// S7
+tl.fromTo("#S7 .t", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.5 }, 45.5);
+tl.fromTo("#S7 .tag .pill", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 49.1);
+tl.fromTo("#S7 .p1", { y: 1400, rotation: -6 }, { y: 0, rotation: -2, duration: 0.7, ease: "power3.out" }, 45.8);
+tl.fromTo("#pc1", { y: 0 }, { y: -150, duration: 3.6, ease: "sine.inOut" }, 46.4);
+tl.fromTo("#S7 .p1 .stamp", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 49.4);
+tl.to("#S7 .p1", { x: -760, rotation: -14, duration: 0.6, ease: "power3.in" }, 50.3);
+tl.fromTo("#S7 .p2", { x: 900, rotation: 10 }, { x: 0, rotation: 2, duration: 0.65, ease: "power3.out" }, 50.55);
+tl.fromTo("#pc2", { y: 0 }, { y: -150, duration: 2.8, ease: "sine.inOut" }, 51.1);
+tl.fromTo("#S7 .p2 .stamp", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 52.6);
+
+// S8
+tl.fromTo("#S8 .a", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 54.25);
+tl.fromTo("#S8 .b", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 56.75);
+tl.fromTo("#S8 .sw8", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 56.9);
+tl.to("#S8 .sw8", { rotation: 8, duration: 0.07, repeat: 7, yoyo: true }, 57.3);
+
+// S9
+tl.fromTo("#S9 .t", { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 58.0);
+tl.fromTo("#S9 .post", { opacity: 0, y: 120 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 58.05);
+gsap.set("#S9 .posted", { opacity: 0 });
+tl.set("#cph", { opacity: 0 }, 58.3);
+typeText($("#ctyped"), "AI AGENT", 58.3, 0.75);
+tl.to("#S9 .sendb", { scale: 0.82, duration: 0.08, yoyo: true, repeat: 1 }, 59.15);
+tl.set("#ctyped", { opacity: 0 }, 59.25);
+tl.set("#cph", { opacity: 1 }, 59.25);
+tl.fromTo("#S9 .posted", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 59.25);
+tl.fromTo("#S9 .helper", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 59.7);
+
+// END
+tl.fromTo("#END .lc", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.7, ease: "power3.out" }, 63.35);
+tl.fromTo("#END .tg", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6 }, 63.8);
+<!--module-->
+window.__hf = window.__hf || {};
+window.__hf.buildReady = window.__hf.buildReady || {};
+window.__hf.buildReady["merge3d"] = mount3D({ canvas: "c3merge", w: W, h: H, start: 26.4, kind: "logoMerge", opts: { dur: 6.75, zoom: 0.8, tiles: [["assets/icons/emoji/robot.svg", 2.6], ["assets/icons/logos/facebook.svg", 1.35], ["assets/icons/logos/youtube-icon.svg", 1.35], ["assets/icons/logos/google-gmail.svg", 1.35], ["assets/icons/logos/whatsapp-icon.svg", 1.35], ["assets/icons/logos/instagram-icon.svg", 1.35], ["assets/icons/logos/messenger.svg", 1.35], ["assets/icons/logos/telegram.svg", 1.35], ["assets/icons/logos/google-drive.svg", 1.35]] } });
+window.__hf.buildReady["field3d"] = mount3D({ canvas: "c3field", w: W, h: H, start: 39.7, kind: "field", opts: { dur: 5.7, zoom: 0.8 } });

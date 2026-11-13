@@ -6,6 +6,8 @@
   "plugins": ["react", "react-hooks", "typescript"],
   "ignorePatterns": [
     ".scratch/",
+    "sr-academy/_vendor/lib/",
+    "sr-academy/*/assets/",
     "dist/",
     "coverage/",
     "node_modules/",
